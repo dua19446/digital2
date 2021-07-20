@@ -2768,7 +2768,14 @@ char TABLA(char f);
 #pragma config BOR4V = BOR40V
 
 #pragma config WRT = OFF
-# 50 "lab1d2.c"
+
+
+
+
+
+
+
+
 int MULTIPLEXADO;
 unsigned char GUARDADO;
 char VAR1;
@@ -2820,7 +2827,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
     {
         if (ADCON0bits.CHS == 0)
         {
-            ADCON0bits.CHS = 0;
+
             GUARDADO = read_ADC();
         }
         _delay((unsigned long)((50)*(4000000/4000000.0)));

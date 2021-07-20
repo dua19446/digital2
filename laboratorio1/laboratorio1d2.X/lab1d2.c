@@ -7,8 +7,8 @@
 #include <xc.h>
 #include <stdint.h>
 #include <stdio.h>
-#include "libreria_ADC.h"
-#include "Tabla_DIS.h"
+#include "libreria_ADC.h" // Libreria para conf. del ADC y lectura del adresh
+#include "Tabla_DIS.h"//tabla para hacer traduccion de los valores del adresh
 //------------------------------------------------------------------------------
 //                         BITS DE CONFIGURACION
 //------------------------------------------------------------------------------
@@ -41,16 +41,14 @@
 
 #define _XTAL_FREQ 4000000//Para usar la funcion de 'delay'
 
-//char DISPLAY[16] = {0b00111111,0b00000110,0b01011011,0b01001111,0b01100110,
-//0b01101101,0b01111101,0b00000111,0b01111111,0b01101111,0b01110111,0b01111100,
-//0b00111001,0b01011110,0b01111001,0b01110001};
+
 //------------------------------------------------------------------------------
 //                                VARIABLES
 //------------------------------------------------------------------------------
-int MULTIPLEXADO;
-unsigned char GUARDADO;
-char VAR1;
-char VAR2;
+int MULTIPLEXADO; //bandera para hacer el cambio de displays
+unsigned char GUARDADO;//variable para guardar el valor de adresh
+char VAR1;//variable para guardar el nibble menos significativo de adresh
+char VAR2;//variable para guardar el nibble mas significativo de adresh
 //------------------------------------------------------------------------------
 //                          PROTOTIPOS FUNCIONES 
 //------------------------------------------------------------------------------
@@ -65,7 +63,7 @@ void __interrupt() isr(void){
         {
             PORTEbits.RE1 = 0;//Se apaga el tercer display de 7 seg 
             PORTEbits.RE0 = 1;//Se activa el primer display de 7 seg
-            PORTC = 0;
+            PORTC = 0;//Se pone en o para evitar ghosting
             PORTC = TABLA(VAR2);//Se despliega el valor de centena traducido
             MULTIPLEXADO = 0b00000001;//se cambia el valor de bandera para pasar
         }                           //al siguiente display
@@ -74,7 +72,7 @@ void __interrupt() isr(void){
         {                               // la siguientes instrucciones
             PORTEbits.RE0 = 0;//Se apaga el primer display
             PORTEbits.RE1 = 1;// Se enciende el segundo display
-            PORTC = 0;
+            PORTC = 0;//Se pone en o para evitar ghosting
             PORTC = TABLA(VAR1);//despliega el valor de decena traducido  
             MULTIPLEXADO = 0b00000000;// se cambia el valor de bandera para 
         }                             // pasar al siguiente display  
@@ -87,18 +85,18 @@ void __interrupt() isr(void){
         if (PORTBbits.RB0 == 0)
         {
             PORTD = PORTD + 1;// Si se apacha el primer boton se incrementa el 
-        }                     // el puerto A
+        }                     // el puerto D
         if (PORTBbits.RB1 == 0)
         {
             PORTD = PORTD - 1;// Si se apacha el segundo boton se decrementa el 
-        }                     // el puerto A
+        }                     // el puerto D
         INTCONbits.RBIF = 0;// Se limpia la bandera de la interrupcion del 
     }                       // puerto B
     if (PIR1bits.ADIF == 1)//Interrupcion del ADC 
     {
         if (ADCON0bits.CHS == 0)//si se esta en este canal que haga lo siguiente
         {
-            ADCON0bits.CHS = 0;//Se cambia el valor del canal
+//            ADCON0bits.CHS = 0;//Se cambia el valor del canal
             GUARDADO = read_ADC();// Se guarda el valor de ADRESH en una variable.
         }                     // para luego realizar la division. 
         __delay_us(50);//tiempo necesario para el cambio de canal 
