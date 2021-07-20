@@ -13,7 +13,7 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "59 C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 [v _isr isr `II(v  1 e 1 0 ]
-"109
+"108
 [v _main main `(v  1 e 1 0 ]
 "128
 [v _setup setup `(v  1 e 1 0 ]
@@ -213,7 +213,7 @@
 [v _VAR2 VAR2 `uc  1 e 1 0 ]
 "5 C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\Tabla_DIS.c
 [v _DISPLAY DISPLAY `[16]uc  1 e 16 0 ]
-"109 C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
+"108 C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 [v _main main `(v  1 e 1 0 ]
 {
 "124
@@ -248,7 +248,7 @@
 "59 C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"105
+"104
 } 0
 "6 C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\libreria_ADC.c
 [v i1_read_ADC read_ADC `(uc  1 e 1 0 ]

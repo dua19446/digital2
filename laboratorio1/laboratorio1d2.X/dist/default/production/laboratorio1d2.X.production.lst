@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Mon Jul 19 18:09:52 2021
+                                                                                               Mon Jul 19 19:01:58 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -592,7 +592,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    578 ;;
    579 ;; *************** function _main *****************
    580 ;; Defined at:
-   581 ;;		line 109 in file "lab1d2.c"
+   581 ;;		line 108 in file "lab1d2.c"
    582 ;; Parameters:    Size  Location     Type
    583 ;;		None
    584 ;; Auto vars:     Size  Location     Type
@@ -629,17 +629,17 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    615                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
    616                           
    617                           
-   618                           ;lab1d2.c: 111: 
+   618                           ;lab1d2.c: 110:     OSCCONbits.SCS = 1;
    619  00D5  120A  118A  209D  120A  118A  	fcall	_setup
    620  00DA                     l1085:
    621                           
-   622                           ;lab1d2.c: 113:     OPTION_REGbits.T0CS = 0;;lab1d2.c: 114:     OPTION_REGbits.PSA = 0;
+   622                           ;lab1d2.c: 112: ;lab1d2.c: 113:     OPTION_REGbits.T0CS = 0;
    623  00DA  1283               	bcf	3,5	;RP0=0, select bank0
    624  00DB  1303               	bcf	3,6	;RP1=0, select bank0
    625  00DC  149F               	bsf	31,1	;volatile
    626  00DD                     l1087:
    627                           
-   628                           ;lab1d2.c: 115:     OPTION_REGbits.PS2 = 0;
+   628                           ;lab1d2.c: 114:     OPTION_REGbits.PSA = 0;
    629  00DD  0837               	movf	_GUARDADO,w
    630  00DE  390F               	andlw	15
    631  00DF  00B6               	movwf	??_main
@@ -647,7 +647,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    633  00E1  00F8               	movwf	_VAR1
    634  00E2                     l1089:
    635                           
-   636                           ;lab1d2.c: 116:     OPTION_REGbits.PS1 = 0;
+   636                           ;lab1d2.c: 115:     OPTION_REGbits.PS2 = 0;
    637  00E2  0837               	movf	_GUARDADO,w
    638  00E3  120A  118A  2101  120A  118A  	fcall	_swapTwoNibbles
    639  00E8  390F               	andlw	15
@@ -1070,7 +1070,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1056  0026                     _isr:
   1057  0026                     i1l949:
   1058                           
-  1059                           ;lab1d2.c: 61:         _delay((unsigned long)((50)*(4000000/4000000.0)));
+  1059                           ;lab1d2.c: 61:         PIR1bits.ADIF = 0;
   1060  0026  1D0B               	btfss	11,2	;volatile
   1061  0027  2829               	goto	u14_21
   1062  0028  282A               	goto	u14_20
@@ -1079,7 +1079,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1065  002A                     u14_20:
   1066  002A                     i1l951:
   1067                           
-  1068                           ;lab1d2.c: 62:         PIR1bits.ADIF = 0;
+  1068                           ;lab1d2.c: 62:     }
   1069  002A  0879               	movf	_MULTIPLEXADO,w
   1070  002B  047A               	iorwf	_MULTIPLEXADO+1,w
   1071  002C  1D03               	btfss	3,2
@@ -1090,7 +1090,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1076  0030                     u15_20:
   1077  0030                     i1l953:
   1078                           
-  1079                           ;lab1d2.c: 63:     };lab1d2.c: 64: }
+  1079                           ;lab1d2.c: 63: };lab1d2.c: 64: 
   1080  0030  1283               	bcf	3,5	;RP0=0, select bank0
   1081  0031  1303               	bcf	3,6	;RP1=0, select bank0
   1082  0032  1089               	bcf	9,1	;volatile
@@ -1103,7 +1103,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1089  0034  0187               	clrf	7	;volatile
   1090  0035                     i1l957:
   1091                           
-  1092                           ;lab1d2.c: 67: 
+  1092                           ;lab1d2.c: 67: void main(void){
   1093  0035  0877               	movf	_VAR2,w
   1094  0036  120A  118A  2150  120A  118A  	fcall	_TABLA
   1095  003B  1283               	bcf	3,5	;RP0=0, select bank0
@@ -1111,13 +1111,13 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1097  003D  0087               	movwf	7	;volatile
   1098  003E                     i1l959:
   1099                           
-  1100                           ;lab1d2.c: 68: void main(void){
+  1100                           ;lab1d2.c: 68: 
   1101  003E  3001               	movlw	1
   1102  003F  00F9               	movwf	_MULTIPLEXADO
   1103  0040  3000               	movlw	0
   1104  0041  00FA               	movwf	_MULTIPLEXADO+1
   1105                           
-  1106                           ;lab1d2.c: 69: 
+  1106                           ;lab1d2.c: 69:     setup();
   1107  0042  2859               	goto	i1l971
   1108  0043                     i1l961:
   1109  0043  0379               	decf	_MULTIPLEXADO,w
@@ -1130,16 +1130,17 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1116  0049                     u16_20:
   1117  0049                     i1l963:
   1118                           
-  1119                           ;lab1d2.c: 72:     {;lab1d2.c: 73:         ADCON0bits.GO = 1;
+  1119                           ;lab1d2.c: 72:         ADCON0bits.GO = 1;;lab1d2.c: 73:         VAR1 = GUARDADO & 0b0000
+      +                          1111;
   1120  0049  1283               	bcf	3,5	;RP0=0, select bank0
   1121  004A  1303               	bcf	3,6	;RP1=0, select bank0
   1122  004B  1009               	bcf	9,0	;volatile
   1123                           
-  1124                           ;lab1d2.c: 74:         VAR1 = GUARDADO & 0b00001111;
+  1124                           ;lab1d2.c: 74:         VAR2 = swapTwoNibbles(GUARDADO)& 0b00001111;
   1125  004C  1489               	bsf	9,1	;volatile
   1126  004D                     i1l965:
   1127                           
-  1128                           ;lab1d2.c: 75:         VAR2 = swapTwoNibbles(GUARDADO)& 0b00001111;
+  1128                           ;lab1d2.c: 75: 
   1129  004D  0187               	clrf	7	;volatile
   1130  004E                     i1l967:
   1131                           
@@ -1237,7 +1238,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1223  0082                     u21_20:
   1224  0082                     i1l991:
   1225                           
-  1226                           ;lab1d2.c: 98:     TRISBbits.TRISB7 = 0;;lab1d2.c: 100:     PORTA = 0X00;
+  1226                           ;lab1d2.c: 98:     TRISBbits.TRISB7 = 0;;lab1d2.c: 99: 
   1227  0082  120A  118A  215F  120A  118A  	fcall	i1_read_ADC
   1228  0087  00F3               	movwf	??_isr
   1229  0088  0873               	movf	??_isr,w
@@ -1246,7 +1247,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1232  008B  00B7               	movwf	_GUARDADO
   1233  008C                     i1l993:
   1234                           
-  1235                           ;lab1d2.c: 102:     PORTD = 0X00;
+  1235                           ;lab1d2.c: 101:     PORTC = 0X00;
   1236  008C  3010               	movlw	16
   1237  008D  00F3               	movwf	??_isr
   1238  008E                     u24_27:
@@ -1255,7 +1256,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1241  0090  0000               	nop
   1242  0091                     i1l995:
   1243                           
-  1244                           ;lab1d2.c: 103:     PORTB = 0X00;
+  1244                           ;lab1d2.c: 102:     PORTD = 0X00;
   1245  0091  1283               	bcf	3,5	;RP0=0, select bank0
   1246  0092  1303               	bcf	3,6	;RP1=0, select bank0
   1247  0093  130C               	bcf	12,6	;volatile
@@ -1572,7 +1573,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Mon Jul 19 18:09:52 2021
+Symbol Table                                                                                   Mon Jul 19 19:01:58 2021
 
                       pc 0002                       l90 00FC                       l97 00D4  
                      fsr 0004                      l100 011F                      l112 014F  

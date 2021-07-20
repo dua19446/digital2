@@ -6,7 +6,7 @@
  */
 #include <xc.h>
 #include <stdint.h>
-#include <stdio.h>
+#include <stdio.h>//Libreria para usar la funcion SWAP
 #include "libreria_ADC.h" // Libreria para conf. del ADC y lectura del adresh
 #include "Tabla_DIS.h"//tabla para hacer traduccion de los valores del adresh
 //------------------------------------------------------------------------------
@@ -96,9 +96,8 @@ void __interrupt() isr(void){
     {
         if (ADCON0bits.CHS == 0)//si se esta en este canal que haga lo siguiente
         {
-//            ADCON0bits.CHS = 0;//Se cambia el valor del canal
             GUARDADO = read_ADC();// Se guarda el valor de ADRESH en una variable.
-        }                     // para luego realizar la division. 
+        }               // para luego realizar SWUAP. 
         __delay_us(50);//tiempo necesario para el cambio de canal 
         PIR1bits.ADIF = 0;//Se apaga el valor de la bandera de interrupcion ADC
     }
@@ -111,15 +110,16 @@ void main(void){
     setup();// Se llama a la funcion setup para configuracion de I/O
     while (1) // Se implemta el loop
     {
-        ADCON0bits.GO = 1;
-        VAR1 = GUARDADO & 0b00001111;
-        VAR2 = swapTwoNibbles(GUARDADO)& 0b00001111;
-        if (PORTD < read_ADC())
+        ADCON0bits.GO = 1;//para que se haga la conversion ADC cada vez
+        VAR1 = GUARDADO & 0b00001111;//Se guarda el nibble menos sig. del adresh
+        VAR2 = swapTwoNibbles(GUARDADO)& 0b00001111;//Se realiza el swuap de 
+                                       //de los nibbles de adresh y se guarda
+        if (PORTD < read_ADC())//si el valor de adresh es mayor que el contador:
         {
-            PORTBbits.RB7 = 1;
+            PORTBbits.RB7 = 1;//Prender el led cuando suceda 
         }
         else
-            PORTBbits.RB7 = 0;
+            PORTBbits.RB7 = 0;//mantenerlo apagado en cualquier otro caso.
     }              
 }
 //------------------------------------------------------------------------------
@@ -147,7 +147,7 @@ void setup(void){
     // configuracion del oscilador 
     OSCCONbits.IRCF2 = 0;
     OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF0 = 1; //Se configura el oscilador a una frecuencia de 250kHz
+    OSCCONbits.IRCF0 = 1; //Se configura el oscilador a una frecuencia de 500kHz
     OSCCONbits.SCS = 1;
     
     // configuracion del timer 0 y pull-up internos
@@ -155,7 +155,7 @@ void setup(void){
     OPTION_REGbits.PSA = 0;
     OPTION_REGbits.PS2 = 0;
     OPTION_REGbits.PS1 = 0;
-    OPTION_REGbits.PS0 = 0;
+    OPTION_REGbits.PS0 = 0;//Presacler de 2
     
     
     OPTION_REGbits.nRBPU = 0;
@@ -164,7 +164,7 @@ void setup(void){
     IOCBbits.IOCB1 = 1;
     
     // configuracion del ADC
-    conf_ADC();
+    conf_ADC();// funcion de libreria adc para configurarlo.
     
     // configuracion de interrupciones 
     INTCONbits.GIE = 1;
@@ -181,4 +181,4 @@ unsigned  char  swapTwoNibbles ( unsigned  char n)
     unsigned  char num;
     num = (((n &  0x0F ) <<  4)  | ((n &  0xF0 ) >>  4));
     return num;
-}
+}// funcion para realizar SWAP de nibbles.

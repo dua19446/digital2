@@ -6,7 +6,7 @@
 uint8_t read_ADC()
 {
     return ADRESH;
-}
+}// funcion para leer el valor de adresh
 void conf_ADC(void)
 {
     ADCON0bits.CHS = 0; // CANAL AN0
@@ -19,4 +19,4 @@ void conf_ADC(void)
     ADCON1bits.ADFM = 0; // justificacion a la izquierda.
     ADCON1bits.VCFG0 = 0;
     ADCON1bits.VCFG1 = 0;  //Vss y Vcc
-}
+}// Configuracion del ADC con justificacion a la izquierda.

@@ -11,4 +11,5 @@ char TABLA(char f)
    char val;
    val = DISPLAY[f];
    return val;
-}
+}// Funcion que devuelve el dato colocado traducido por la tabla para que 
+// aparezca en los displayas.

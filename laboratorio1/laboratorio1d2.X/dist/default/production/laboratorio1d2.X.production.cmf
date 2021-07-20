@@ -31,7 +31,7 @@ idataBANK0 CODE 0 133 133 10 2
 dataBANK0 BANK0 1 20 20 10 1
 bssCOMMON COMMON 1 79 79 2 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\duart\AppData\Local\Temp\s184.o
+$C:\Users\duart\AppData\Local\Temp\sn2g.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 E E 3 2
 config CONFIG 4 2007 2007 2 2
@@ -81,24 +81,24 @@ STRING 163-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\laboratorio1d2.X.production.o
-11 cinit CODE >835:C:\Users\duart\AppData\Local\Temp\s184.s
-11 cinit CODE >838:C:\Users\duart\AppData\Local\Temp\s184.s
-11 cinit CODE >891:C:\Users\duart\AppData\Local\Temp\s184.s
-12 cinit CODE >892:C:\Users\duart\AppData\Local\Temp\s184.s
-13 cinit CODE >893:C:\Users\duart\AppData\Local\Temp\s184.s
-14 cinit CODE >894:C:\Users\duart\AppData\Local\Temp\s184.s
-15 cinit CODE >895:C:\Users\duart\AppData\Local\Temp\s184.s
-16 cinit CODE >896:C:\Users\duart\AppData\Local\Temp\s184.s
-17 cinit CODE >897:C:\Users\duart\AppData\Local\Temp\s184.s
-18 cinit CODE >898:C:\Users\duart\AppData\Local\Temp\s184.s
-19 cinit CODE >899:C:\Users\duart\AppData\Local\Temp\s184.s
-1A cinit CODE >900:C:\Users\duart\AppData\Local\Temp\s184.s
-1F cinit CODE >904:C:\Users\duart\AppData\Local\Temp\s184.s
-20 cinit CODE >907:C:\Users\duart\AppData\Local\Temp\s184.s
-21 cinit CODE >908:C:\Users\duart\AppData\Local\Temp\s184.s
-22 cinit CODE >914:C:\Users\duart\AppData\Local\Temp\s184.s
-22 cinit CODE >916:C:\Users\duart\AppData\Local\Temp\s184.s
-23 cinit CODE >917:C:\Users\duart\AppData\Local\Temp\s184.s
+11 cinit CODE >835:C:\Users\duart\AppData\Local\Temp\sn2g.s
+11 cinit CODE >838:C:\Users\duart\AppData\Local\Temp\sn2g.s
+11 cinit CODE >891:C:\Users\duart\AppData\Local\Temp\sn2g.s
+12 cinit CODE >892:C:\Users\duart\AppData\Local\Temp\sn2g.s
+13 cinit CODE >893:C:\Users\duart\AppData\Local\Temp\sn2g.s
+14 cinit CODE >894:C:\Users\duart\AppData\Local\Temp\sn2g.s
+15 cinit CODE >895:C:\Users\duart\AppData\Local\Temp\sn2g.s
+16 cinit CODE >896:C:\Users\duart\AppData\Local\Temp\sn2g.s
+17 cinit CODE >897:C:\Users\duart\AppData\Local\Temp\sn2g.s
+18 cinit CODE >898:C:\Users\duart\AppData\Local\Temp\sn2g.s
+19 cinit CODE >899:C:\Users\duart\AppData\Local\Temp\sn2g.s
+1A cinit CODE >900:C:\Users\duart\AppData\Local\Temp\sn2g.s
+1F cinit CODE >904:C:\Users\duart\AppData\Local\Temp\sn2g.s
+20 cinit CODE >907:C:\Users\duart\AppData\Local\Temp\sn2g.s
+21 cinit CODE >908:C:\Users\duart\AppData\Local\Temp\sn2g.s
+22 cinit CODE >914:C:\Users\duart\AppData\Local\Temp\sn2g.s
+22 cinit CODE >916:C:\Users\duart\AppData\Local\Temp\sn2g.s
+23 cinit CODE >917:C:\Users\duart\AppData\Local\Temp\sn2g.s
 4 intentry CODE >59:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 150 text7 CODE >9:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\Tabla_DIS.c
 151 text7 CODE >12:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\Tabla_DIS.c
@@ -132,10 +132,10 @@ $dist/default/production\laboratorio1d2.X.production.o
 72 text5 CODE >93:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 73 text5 CODE >95:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 79 text5 CODE >97:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
-82 text5 CODE >100:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
-8C text5 CODE >102:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
-91 text5 CODE >103:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
-94 text5 CODE >105:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
+82 text5 CODE >99:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
+8C text5 CODE >101:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
+91 text5 CODE >102:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
+94 text5 CODE >104:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 15B text4 CODE >6:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\libreria_ADC.c
 15B text4 CODE >8:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\libreria_ADC.c
 15E text4 CODE >9:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\libreria_ADC.c
@@ -190,33 +190,33 @@ D4 text2 CODE >178:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratori
 104 text1 CODE >182:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 11E text1 CODE >183:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 11F text1 CODE >184:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
-D5 maintext CODE >109:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
-D5 maintext CODE >111:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
-DA maintext CODE >114:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
-DD maintext CODE >115:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
-E2 maintext CODE >116:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
+D5 maintext CODE >108:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
+D5 maintext CODE >110:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
+DA maintext CODE >113:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
+DD maintext CODE >114:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
+E2 maintext CODE >115:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 EE maintext CODE >117:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 FA maintext CODE >119:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 FB maintext CODE >120:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 FC maintext CODE >121:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
 FC maintext CODE >122:C:\Users\duart\OneDrive\Documentos\GitHub\digital2\laboratorio1\laboratorio1d2.X\lab1d2.c
-120 inittext CODE >865:C:\Users\duart\AppData\Local\Temp\s184.s
-120 inittext CODE >866:C:\Users\duart\AppData\Local\Temp\s184.s
-121 inittext CODE >867:C:\Users\duart\AppData\Local\Temp\s184.s
-122 inittext CODE >868:C:\Users\duart\AppData\Local\Temp\s184.s
-123 inittext CODE >869:C:\Users\duart\AppData\Local\Temp\s184.s
-124 inittext CODE >876:C:\Users\duart\AppData\Local\Temp\s184.s
-124 inittext CODE >877:C:\Users\duart\AppData\Local\Temp\s184.s
-129 inittext CODE >878:C:\Users\duart\AppData\Local\Temp\s184.s
-12A inittext CODE >879:C:\Users\duart\AppData\Local\Temp\s184.s
-12B inittext CODE >880:C:\Users\duart\AppData\Local\Temp\s184.s
-12C inittext CODE >881:C:\Users\duart\AppData\Local\Temp\s184.s
-12D inittext CODE >882:C:\Users\duart\AppData\Local\Temp\s184.s
-12E inittext CODE >883:C:\Users\duart\AppData\Local\Temp\s184.s
-12F inittext CODE >884:C:\Users\duart\AppData\Local\Temp\s184.s
-130 inittext CODE >885:C:\Users\duart\AppData\Local\Temp\s184.s
-131 inittext CODE >886:C:\Users\duart\AppData\Local\Temp\s184.s
-132 inittext CODE >887:C:\Users\duart\AppData\Local\Temp\s184.s
+120 inittext CODE >865:C:\Users\duart\AppData\Local\Temp\sn2g.s
+120 inittext CODE >866:C:\Users\duart\AppData\Local\Temp\sn2g.s
+121 inittext CODE >867:C:\Users\duart\AppData\Local\Temp\sn2g.s
+122 inittext CODE >868:C:\Users\duart\AppData\Local\Temp\sn2g.s
+123 inittext CODE >869:C:\Users\duart\AppData\Local\Temp\sn2g.s
+124 inittext CODE >876:C:\Users\duart\AppData\Local\Temp\sn2g.s
+124 inittext CODE >877:C:\Users\duart\AppData\Local\Temp\sn2g.s
+129 inittext CODE >878:C:\Users\duart\AppData\Local\Temp\sn2g.s
+12A inittext CODE >879:C:\Users\duart\AppData\Local\Temp\sn2g.s
+12B inittext CODE >880:C:\Users\duart\AppData\Local\Temp\sn2g.s
+12C inittext CODE >881:C:\Users\duart\AppData\Local\Temp\sn2g.s
+12D inittext CODE >882:C:\Users\duart\AppData\Local\Temp\sn2g.s
+12E inittext CODE >883:C:\Users\duart\AppData\Local\Temp\sn2g.s
+12F inittext CODE >884:C:\Users\duart\AppData\Local\Temp\sn2g.s
+130 inittext CODE >885:C:\Users\duart\AppData\Local\Temp\sn2g.s
+131 inittext CODE >886:C:\Users\duart\AppData\Local\Temp\sn2g.s
+132 inittext CODE >887:C:\Users\duart\AppData\Local\Temp\sn2g.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -245,10 +245,10 @@ _TMR0 1 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
 _VAR1 78 0 COMMON 1 nvCOMMON dist/default/production\laboratorio1d2.X.production.o
 _VAR2 77 0 COMMON 1 nvCOMMON dist/default/production\laboratorio1d2.X.production.o
 _WPUB 95 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\duart\AppData\Local\Temp\s184.o
+___sp 0 0 STACK 2 stack C:\Users\duart\AppData\Local\Temp\sn2g.o
 _main 1AA 0 CODE 0 maintext dist/default/production\laboratorio1d2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
-start 1C 0 CODE 0 init C:\Users\duart\AppData\Local\Temp\s184.o
+start 1C 0 CODE 0 init C:\Users\duart\AppData\Local\Temp\sn2g.o
 __end_of_swapTwoNibbles 240 0 CODE 0 text1 dist/default/production\laboratorio1d2.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -257,12 +257,12 @@ __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
 i1_read_ADC 2BE 0 CODE 0 text6 dist/default/production\laboratorio1d2.X.production.o
 __LnvCOMMON 0 0 ABS 0 nvCOMMON -
-intlevel0 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\s184.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\s184.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\s184.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\s184.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\s184.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\s184.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\sn2g.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\sn2g.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\sn2g.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\sn2g.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\sn2g.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\duart\AppData\Local\Temp\sn2g.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
@@ -272,8 +272,8 @@ _ADRESH 1E 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __end_ofi1_read_ADC 2C6 0 CODE 0 text6 dist/default/production\laboratorio1d2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\duart\AppData\Local\Temp\s184.o
-___stacklo 0 0 ABS 0 - C:\Users\duart\AppData\Local\Temp\s184.o
+___stackhi 0 0 ABS 0 - C:\Users\duart\AppData\Local\Temp\sn2g.o
+___stacklo 0 0 ABS 0 - C:\Users\duart\AppData\Local\Temp\sn2g.o
 __size_of_TABLA 0 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
 _DISPLAY 20 0 BANK0 1 dataBANK0 dist/default/production\laboratorio1d2.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
@@ -281,7 +281,7 @@ __HnvCOMMON 0 0 ABS 0 nvCOMMON -
 start_initialization 22 0 CODE 0 cinit dist/default/production\laboratorio1d2.X.production.o
 _TRISBbits 86 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
 __pcstackBANK0 30 0 BANK0 1 cstackBANK0 dist/default/production\laboratorio1d2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\duart\AppData\Local\Temp\s184.o
+___int_sp 0 0 STACK 2 stack C:\Users\duart\AppData\Local\Temp\sn2g.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -332,7 +332,7 @@ __size_of_read_ADC 0 0 ABS 0 - dist/default/production\laboratorio1d2.X.producti
 __end_of_isr 13A 0 CODE 0 text5 dist/default/production\laboratorio1d2.X.production.o
 __size_ofi1_read_ADC 0 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\duart\AppData\Local\Temp\s184.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\duart\AppData\Local\Temp\sn2g.o
 __pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\laboratorio1d2.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _PIE1bits 8C 0 ABS 0 - dist/default/production\laboratorio1d2.X.production.o

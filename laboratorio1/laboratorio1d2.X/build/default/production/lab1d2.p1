@@ -488,23 +488,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _VAR2 `uc ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
 "59
-[; ;lab1d2.c: 59:             GUARDADO = read_ADC();
+[; ;lab1d2.c: 59:         }
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
 "61
-[; ;lab1d2.c: 61:         _delay((unsigned long)((50)*(4000000/4000000.0)));
+[; ;lab1d2.c: 61:         PIR1bits.ADIF = 0;
 [e $ ! == -> _T0IF `i -> 1 `i 140  ]
 "62
-[; ;lab1d2.c: 62:         PIR1bits.ADIF = 0;
+[; ;lab1d2.c: 62:     }
 {
 [e $ ! == _MULTIPLEXADO -> 0 `i 141  ]
 "63
-[; ;lab1d2.c: 63:     }
+[; ;lab1d2.c: 63: }
 {
 "64
-[; ;lab1d2.c: 64: }
+[; ;lab1d2.c: 64: 
 [e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
 "65
 [; ;lab1d2.c: 65: 
@@ -513,30 +513,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;lab1d2.c: 66: 
 [e = _PORTC -> -> 0 `i `uc ]
 "67
-[; ;lab1d2.c: 67: 
+[; ;lab1d2.c: 67: void main(void){
 [e = _PORTC -> ( _TABLA (1 _VAR2 `uc ]
 "68
-[; ;lab1d2.c: 68: void main(void){
+[; ;lab1d2.c: 68: 
 [e = _MULTIPLEXADO -> 1 `i ]
 "69
-[; ;lab1d2.c: 69: 
+[; ;lab1d2.c: 69:     setup();
 }
 [e $U 142  ]
 "71
-[; ;lab1d2.c: 71:     while (1)
+[; ;lab1d2.c: 71:     {
 [e :U 141 ]
 [e $ ! == _MULTIPLEXADO -> 1 `i 143  ]
 "72
-[; ;lab1d2.c: 72:     {
+[; ;lab1d2.c: 72:         ADCON0bits.GO = 1;
 {
 "73
-[; ;lab1d2.c: 73:         ADCON0bits.GO = 1;
+[; ;lab1d2.c: 73:         VAR1 = GUARDADO & 0b00001111;
 [e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
 "74
-[; ;lab1d2.c: 74:         VAR1 = GUARDADO & 0b00001111;
+[; ;lab1d2.c: 74:         VAR2 = swapTwoNibbles(GUARDADO)& 0b00001111;
 [e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
 "75
-[; ;lab1d2.c: 75:         VAR2 = swapTwoNibbles(GUARDADO)& 0b00001111;
+[; ;lab1d2.c: 75: 
 [e = _PORTC -> -> 0 `i `uc ]
 "76
 [; ;lab1d2.c: 76:         if (PORTD < read_ADC())
@@ -610,51 +610,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 "98
 [; ;lab1d2.c: 98:     TRISBbits.TRISB7 = 0;
 {
+"99
+[; ;lab1d2.c: 99: 
+[e = _GUARDADO ( _read_ADC ..  ]
 "100
 [; ;lab1d2.c: 100:     PORTA = 0X00;
-[e = _GUARDADO ( _read_ADC ..  ]
-"101
-[; ;lab1d2.c: 101:     PORTC = 0X00;
 }
 [e :U 148 ]
+"101
+[; ;lab1d2.c: 101:     PORTC = 0X00;
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "102
 [; ;lab1d2.c: 102:     PORTD = 0X00;
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "103
 [; ;lab1d2.c: 103:     PORTB = 0X00;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"104
-[; ;lab1d2.c: 104:     PORTE = 0X00;
 }
 [e :U 147 ]
-"105
-[; ;lab1d2.c: 105: 
+"104
+[; ;lab1d2.c: 104:     PORTE = 0X00;
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"109
-[; ;lab1d2.c: 109:     OSCCONbits.IRCF0 = 1;
+"108
+[; ;lab1d2.c: 108:     OSCCONbits.IRCF1 = 1;
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
+"110
+[; ;lab1d2.c: 110:     OSCCONbits.SCS = 1;
+[e ( _setup ..  ]
 "111
 [; ;lab1d2.c: 111: 
-[e ( _setup ..  ]
+[e :U 151 ]
 "112
 [; ;lab1d2.c: 112: 
-[e :U 151 ]
+{
 "113
 [; ;lab1d2.c: 113:     OPTION_REGbits.T0CS = 0;
-{
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
 "114
 [; ;lab1d2.c: 114:     OPTION_REGbits.PSA = 0;
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+[e = _VAR1 -> & -> _GUARDADO `i -> 15 `i `uc ]
 "115
 [; ;lab1d2.c: 115:     OPTION_REGbits.PS2 = 0;
-[e = _VAR1 -> & -> _GUARDADO `i -> 15 `i `uc ]
-"116
-[; ;lab1d2.c: 116:     OPTION_REGbits.PS1 = 0;
 [e = _VAR2 -> & -> ( _swapTwoNibbles (1 _GUARDADO `i -> 15 `i `uc ]
 "117
 [; ;lab1d2.c: 117:     OPTION_REGbits.PS0 = 0;

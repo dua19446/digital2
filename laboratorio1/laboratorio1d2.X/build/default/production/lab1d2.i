@@ -2827,7 +2827,6 @@ void __attribute__((picinterrupt(("")))) isr(void){
     {
         if (ADCON0bits.CHS == 0)
         {
-
             GUARDADO = read_ADC();
         }
         _delay((unsigned long)((50)*(4000000/4000000.0)));
@@ -2845,6 +2844,7 @@ void main(void){
         ADCON0bits.GO = 1;
         VAR1 = GUARDADO & 0b00001111;
         VAR2 = swapTwoNibbles(GUARDADO)& 0b00001111;
+
         if (PORTD < read_ADC())
         {
             PORTBbits.RB7 = 1;
