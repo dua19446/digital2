@@ -41,6 +41,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1140
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"64 SPI_MAESTRO.c
+[; ;SPI_MAESTRO.c: 64: void def(void);
+[v _def `(v ~T0 @X0 0 ef ]
+"65
+[; ;SPI_MAESTRO.c: 65: void def1(void);
+[v _def1 `(v ~T0 @X0 0 ef ]
+"66
+[; ;SPI_MAESTRO.c: 66: void def2(void);
+[v _def2 `(v ~T0 @X0 0 ef ]
 "194 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "36 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\string.h
@@ -144,8 +153,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2704
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2704: extern volatile unsigned char SPBRGH __attribute__((address(0x09A)));
 [v _SPBRGH `Vuc ~T0 @X0 0 e@154 ]
-"189 SPI_MAESTRO.c
-[; ;SPI_MAESTRO.c: 189:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"215 SPI_MAESTRO.c
+[; ;SPI_MAESTRO.c: 215:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1292 32 33 34 35 36 37 .. ]
 [n E1292 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1300 0 128 .. ]
@@ -449,433 +458,619 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;SPI_MAESTRO.c: 56: char v3[20];
 [v _v3 `uc ~T0 @X0 -> 20 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"68
-[; ;SPI_MAESTRO.c: 68: void main(void) {
+"71
+[; ;SPI_MAESTRO.c: 71: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"69
-[; ;SPI_MAESTRO.c: 69:     setup();
+"72
+[; ;SPI_MAESTRO.c: 72:     setup();
 [e ( _setup ..  ]
-"73
-[; ;SPI_MAESTRO.c: 73:     while(1){
+"76
+[; ;SPI_MAESTRO.c: 76:     while(1){
 [e :U 145 ]
 {
-"74
-[; ;SPI_MAESTRO.c: 74:        PORTCbits.RC2 = 0;
-[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
-"75
-[; ;SPI_MAESTRO.c: 75:        _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "77
-[; ;SPI_MAESTRO.c: 77:        spiWrite(0X0A);
-[e ( _spiWrite (1 -> -> 10 `i `uc ]
+[; ;SPI_MAESTRO.c: 77:        PORTCbits.RC2 = 0;
+[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
 "78
-[; ;SPI_MAESTRO.c: 78:        VOLTAJE1 = spiRead();
-[e = _VOLTAJE1 -> ( _spiRead ..  `uc ]
-"79
-[; ;SPI_MAESTRO.c: 79:        _delay((unsigned long)((1)*(4000000/4000.0)));
+[; ;SPI_MAESTRO.c: 78:        _delay((unsigned long)((1)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "80
 [; ;SPI_MAESTRO.c: 80:        spiWrite(0X0A);
 [e ( _spiWrite (1 -> -> 10 `i `uc ]
 "81
-[; ;SPI_MAESTRO.c: 81:        VOLTAJE2 = spiRead();
-[e = _VOLTAJE2 -> ( _spiRead ..  `uc ]
+[; ;SPI_MAESTRO.c: 81:        VOLTAJE1 = spiRead();
+[e = _VOLTAJE1 -> ( _spiRead ..  `uc ]
 "82
 [; ;SPI_MAESTRO.c: 82:        _delay((unsigned long)((1)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "83
-[; ;SPI_MAESTRO.c: 83:        PORTCbits.RC2 = 1;
-[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+[; ;SPI_MAESTRO.c: 83:        spiWrite(0X0A);
+[e ( _spiWrite (1 -> -> 10 `i `uc ]
+"84
+[; ;SPI_MAESTRO.c: 84:        VOLTAJE2 = spiRead();
+[e = _VOLTAJE2 -> ( _spiRead ..  `uc ]
 "85
-[; ;SPI_MAESTRO.c: 85:     division(VOLTAJE1);
-[e ( _division (1 _VOLTAJE1 ]
+[; ;SPI_MAESTRO.c: 85:        _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "86
-[; ;SPI_MAESTRO.c: 86:        if(TXIF == 1){
+[; ;SPI_MAESTRO.c: 86:        PORTCbits.RC2 = 1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"88
+[; ;SPI_MAESTRO.c: 88:     division((VOLTAJE1*(500/255)));
+[e ( _division (1 -> * -> _VOLTAJE1 `i / -> 500 `i -> 255 `i `uc ]
+"89
+[; ;SPI_MAESTRO.c: 89:        if(TXIF == 1){
 [e $ ! == -> _TXIF `i -> 1 `i 147  ]
 {
-"87
-[; ;SPI_MAESTRO.c: 87:     _delay((unsigned long)((50)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"88
-[; ;SPI_MAESTRO.c: 88:      printf("VALOR DE POT1: \r");
-[e ( _printf :s 1C ]
-"89
-[; ;SPI_MAESTRO.c: 89:      _delay((unsigned long)((50)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "90
-[; ;SPI_MAESTRO.c: 90:     if(TXIF == 1){
+[; ;SPI_MAESTRO.c: 90:     _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"91
+[; ;SPI_MAESTRO.c: 91:      printf("VALOR DE POT1: \r");
+[e ( _printf :s 1C ]
+"92
+[; ;SPI_MAESTRO.c: 92:      _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"93
+[; ;SPI_MAESTRO.c: 93:     if(TXIF == 1){
 [e $ ! == -> _TXIF `i -> 1 `i 148  ]
 {
-"91
-[; ;SPI_MAESTRO.c: 91:         TXREG = centenas;
+"94
+[; ;SPI_MAESTRO.c: 94:         TXREG = centenas;
 [e = _TXREG -> _centenas `uc ]
-"92
-[; ;SPI_MAESTRO.c: 92:        }
+"95
+[; ;SPI_MAESTRO.c: 95:        }
 }
 [e :U 148 ]
-"93
-[; ;SPI_MAESTRO.c: 93:     _delay((unsigned long)((50)*(4000000/4000.0)));
+"96
+[; ;SPI_MAESTRO.c: 96:     _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"94
-[; ;SPI_MAESTRO.c: 94:     if(TXIF == 1){
+"97
+[; ;SPI_MAESTRO.c: 97:     if(TXIF == 1){
 [e $ ! == -> _TXIF `i -> 1 `i 149  ]
 {
-"95
-[; ;SPI_MAESTRO.c: 95:         TXREG = 46;
+"98
+[; ;SPI_MAESTRO.c: 98:         TXREG = 46;
 [e = _TXREG -> -> 46 `i `uc ]
-"96
-[; ;SPI_MAESTRO.c: 96:        }
+"99
+[; ;SPI_MAESTRO.c: 99:        }
 }
 [e :U 149 ]
-"97
-[; ;SPI_MAESTRO.c: 97:     _delay((unsigned long)((50)*(4000000/4000.0)));
+"100
+[; ;SPI_MAESTRO.c: 100:     _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"98
-[; ;SPI_MAESTRO.c: 98:     if(TXIF == 1){
+"101
+[; ;SPI_MAESTRO.c: 101:     if(TXIF == 1){
 [e $ ! == -> _TXIF `i -> 1 `i 150  ]
 {
-"99
-[; ;SPI_MAESTRO.c: 99:         TXREG = decenas;
+"102
+[; ;SPI_MAESTRO.c: 102:         TXREG = decenas;
 [e = _TXREG -> _decenas `uc ]
-"100
-[; ;SPI_MAESTRO.c: 100:        }
+"103
+[; ;SPI_MAESTRO.c: 103:        }
 }
 [e :U 150 ]
-"101
-[; ;SPI_MAESTRO.c: 101:     _delay((unsigned long)((50)*(4000000/4000.0)));
+"104
+[; ;SPI_MAESTRO.c: 104:     _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"102
-[; ;SPI_MAESTRO.c: 102:     if(TXIF == 1){
+"105
+[; ;SPI_MAESTRO.c: 105:     if(TXIF == 1){
 [e $ ! == -> _TXIF `i -> 1 `i 151  ]
 {
-"103
-[; ;SPI_MAESTRO.c: 103:         TXREG = unidades;
+"106
+[; ;SPI_MAESTRO.c: 106:         TXREG = unidades;
 [e = _TXREG -> _unidades `uc ]
-"104
-[; ;SPI_MAESTRO.c: 104:        }
+"107
+[; ;SPI_MAESTRO.c: 107:        }
 }
 [e :U 151 ]
-"105
-[; ;SPI_MAESTRO.c: 105:     _delay((unsigned long)((50)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"106
-[; ;SPI_MAESTRO.c: 106:     if(TXIF == 1){
-[e $ ! == -> _TXIF `i -> 1 `i 152  ]
-{
-"107
-[; ;SPI_MAESTRO.c: 107:         TXREG = 13;
-[e = _TXREG -> -> 13 `i `uc ]
 "108
-[; ;SPI_MAESTRO.c: 108:        }
-}
-[e :U 152 ]
-"109
-[; ;SPI_MAESTRO.c: 109:     _delay((unsigned long)((50)*(4000000/4000.0)));
+[; ;SPI_MAESTRO.c: 108:     _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "110
-[; ;SPI_MAESTRO.c: 110:     }
+[; ;SPI_MAESTRO.c: 110:     if(TXIF == 1){
+[e $ ! == -> _TXIF `i -> 1 `i 152  ]
+{
+"111
+[; ;SPI_MAESTRO.c: 111:         TXREG = 13;
+[e = _TXREG -> -> 13 `i `uc ]
+"112
+[; ;SPI_MAESTRO.c: 112:        }
+}
+[e :U 152 ]
+"113
+[; ;SPI_MAESTRO.c: 113:     _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"114
+[; ;SPI_MAESTRO.c: 114:     }
 }
 [e :U 147 ]
-"112
-[; ;SPI_MAESTRO.c: 112:     division(VOLTAJE2);
-[e ( _division (1 _VOLTAJE2 ]
-"113
-[; ;SPI_MAESTRO.c: 113:     if(TXIF == 1){
-[e $ ! == -> _TXIF `i -> 1 `i 153  ]
-{
-"114
-[; ;SPI_MAESTRO.c: 114:     _delay((unsigned long)((50)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"115
-[; ;SPI_MAESTRO.c: 115:      printf("VALOR DE POT2: \r");
-[e ( _printf :s 2C ]
 "116
-[; ;SPI_MAESTRO.c: 116:      _delay((unsigned long)((50)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;SPI_MAESTRO.c: 116:     division((VOLTAJE2*(500/255)));
+[e ( _division (1 -> * -> _VOLTAJE2 `i / -> 500 `i -> 255 `i `uc ]
 "117
 [; ;SPI_MAESTRO.c: 117:     if(TXIF == 1){
-[e $ ! == -> _TXIF `i -> 1 `i 154  ]
+[e $ ! == -> _TXIF `i -> 1 `i 153  ]
 {
 "118
-[; ;SPI_MAESTRO.c: 118:         TXREG = centenas;
-[e = _TXREG -> _centenas `uc ]
+[; ;SPI_MAESTRO.c: 118:     _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "119
-[; ;SPI_MAESTRO.c: 119:        }
-}
-[e :U 154 ]
+[; ;SPI_MAESTRO.c: 119:      printf("VALOR DE POT2: \r");
+[e ( _printf :s 2C ]
 "120
-[; ;SPI_MAESTRO.c: 120:     _delay((unsigned long)((50)*(4000000/4000.0)));
+[; ;SPI_MAESTRO.c: 120:      _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "121
 [; ;SPI_MAESTRO.c: 121:     if(TXIF == 1){
-[e $ ! == -> _TXIF `i -> 1 `i 155  ]
+[e $ ! == -> _TXIF `i -> 1 `i 154  ]
 {
 "122
-[; ;SPI_MAESTRO.c: 122:         TXREG = 46;
-[e = _TXREG -> -> 46 `i `uc ]
+[; ;SPI_MAESTRO.c: 122:         TXREG = centenas;
+[e = _TXREG -> _centenas `uc ]
 "123
 [; ;SPI_MAESTRO.c: 123:        }
 }
-[e :U 155 ]
+[e :U 154 ]
 "124
 [; ;SPI_MAESTRO.c: 124:     _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "125
 [; ;SPI_MAESTRO.c: 125:     if(TXIF == 1){
-[e $ ! == -> _TXIF `i -> 1 `i 156  ]
+[e $ ! == -> _TXIF `i -> 1 `i 155  ]
 {
 "126
-[; ;SPI_MAESTRO.c: 126:         TXREG = decenas;
-[e = _TXREG -> _decenas `uc ]
+[; ;SPI_MAESTRO.c: 126:         TXREG = 46;
+[e = _TXREG -> -> 46 `i `uc ]
 "127
 [; ;SPI_MAESTRO.c: 127:        }
 }
-[e :U 156 ]
+[e :U 155 ]
 "128
 [; ;SPI_MAESTRO.c: 128:     _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "129
 [; ;SPI_MAESTRO.c: 129:     if(TXIF == 1){
-[e $ ! == -> _TXIF `i -> 1 `i 157  ]
+[e $ ! == -> _TXIF `i -> 1 `i 156  ]
 {
 "130
-[; ;SPI_MAESTRO.c: 130:         TXREG = unidades;
-[e = _TXREG -> _unidades `uc ]
+[; ;SPI_MAESTRO.c: 130:         TXREG = decenas;
+[e = _TXREG -> _decenas `uc ]
 "131
 [; ;SPI_MAESTRO.c: 131:        }
 }
-[e :U 157 ]
+[e :U 156 ]
 "132
 [; ;SPI_MAESTRO.c: 132:     _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "133
 [; ;SPI_MAESTRO.c: 133:     if(TXIF == 1){
-[e $ ! == -> _TXIF `i -> 1 `i 158  ]
+[e $ ! == -> _TXIF `i -> 1 `i 157  ]
 {
 "134
-[; ;SPI_MAESTRO.c: 134:         TXREG = 13;
-[e = _TXREG -> -> 13 `i `uc ]
+[; ;SPI_MAESTRO.c: 134:         TXREG = unidades;
+[e = _TXREG -> _unidades `uc ]
 "135
-[; ;SPI_MAESTRO.c: 135:     }
+[; ;SPI_MAESTRO.c: 135:        }
 }
-[e :U 158 ]
+[e :U 157 ]
 "136
 [; ;SPI_MAESTRO.c: 136:     _delay((unsigned long)((50)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "137
-[; ;SPI_MAESTRO.c: 137:     }
+[; ;SPI_MAESTRO.c: 137:     if(TXIF == 1){
+[e $ ! == -> _TXIF `i -> 1 `i 158  ]
+{
+"138
+[; ;SPI_MAESTRO.c: 138:         TXREG = 13;
+[e = _TXREG -> -> 13 `i `uc ]
+"139
+[; ;SPI_MAESTRO.c: 139:     }
+}
+[e :U 158 ]
+"140
+[; ;SPI_MAESTRO.c: 140:     _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"141
+[; ;SPI_MAESTRO.c: 141:     }
 }
 [e :U 153 ]
-"139
-[; ;SPI_MAESTRO.c: 139:     while (RCIF == 0);
+"143
+[; ;SPI_MAESTRO.c: 143:     printf("Por favor ingrese la centena, si es <100 colocar 0\r");
+[e ( _printf :s 3C ]
+"144
+[; ;SPI_MAESTRO.c: 144:     while (RCIF == 0);
 [e $U 159  ]
 [e :U 160 ]
 [e :U 159 ]
 [e $ == -> _RCIF `i -> 0 `i 160  ]
 [e :U 161 ]
-"140
-[; ;SPI_MAESTRO.c: 140:     CENTENA = RCREG - 48;
+"145
+[; ;SPI_MAESTRO.c: 145:     CENTENA = RCREG - 48;
 [e = _CENTENA -> - -> _RCREG `i -> 48 `i `uc ]
-"141
-[; ;SPI_MAESTRO.c: 141:     while (RCIF == 0);
+"146
+[; ;SPI_MAESTRO.c: 146:     while(RCREG > '2')
 [e $U 162  ]
 [e :U 163 ]
+"147
+[; ;SPI_MAESTRO.c: 147:     {
+{
+"148
+[; ;SPI_MAESTRO.c: 148:         def();
+[e ( _def ..  ]
+"149
+[; ;SPI_MAESTRO.c: 149:     }
+}
 [e :U 162 ]
-[e $ == -> _RCIF `i -> 0 `i 163  ]
+"146
+[; ;SPI_MAESTRO.c: 146:     while(RCREG > '2')
+[e $ > -> _RCREG `ui -> 50 `ui 163  ]
 [e :U 164 ]
-"142
-[; ;SPI_MAESTRO.c: 142:     DECENA = RCREG - 48;
-[e = _DECENA -> - -> _RCREG `i -> 48 `i `uc ]
-"143
-[; ;SPI_MAESTRO.c: 143:     while (RCIF == 0);
+"150
+[; ;SPI_MAESTRO.c: 150:     printf("Por favor ingrese la decena\r");
+[e ( _printf :s 4C ]
+"151
+[; ;SPI_MAESTRO.c: 151:     while (RCIF == 0);
 [e $U 165  ]
 [e :U 166 ]
 [e :U 165 ]
 [e $ == -> _RCIF `i -> 0 `i 166  ]
 [e :U 167 ]
-"144
-[; ;SPI_MAESTRO.c: 144:     UNIDAD = RCREG - 48;
+"152
+[; ;SPI_MAESTRO.c: 152:     DECENA = RCREG - 48;
+[e = _DECENA -> - -> _RCREG `i -> 48 `i `uc ]
+"153
+[; ;SPI_MAESTRO.c: 153:     if(CENTENA == 2)
+[e $ ! == -> _CENTENA `i -> 2 `i 168  ]
+"154
+[; ;SPI_MAESTRO.c: 154:     {
+{
+"155
+[; ;SPI_MAESTRO.c: 155:            while(RCREG > '5')
+[e $U 169  ]
+[e :U 170 ]
+"156
+[; ;SPI_MAESTRO.c: 156:            {
+{
+"157
+[; ;SPI_MAESTRO.c: 157:                def1();
+[e ( _def1 ..  ]
+"158
+[; ;SPI_MAESTRO.c: 158:            }
+}
+[e :U 169 ]
+"155
+[; ;SPI_MAESTRO.c: 155:            while(RCREG > '5')
+[e $ > -> _RCREG `ui -> 53 `ui 170  ]
+[e :U 171 ]
+"159
+[; ;SPI_MAESTRO.c: 159:     }
+}
+[e :U 168 ]
+"160
+[; ;SPI_MAESTRO.c: 160:     printf("Por favor ingrese la unidad\r");
+[e ( _printf :s 5C ]
+"161
+[; ;SPI_MAESTRO.c: 161:     while (RCIF == 0);
+[e $U 172  ]
+[e :U 173 ]
+[e :U 172 ]
+[e $ == -> _RCIF `i -> 0 `i 173  ]
+[e :U 174 ]
+"162
+[; ;SPI_MAESTRO.c: 162:     UNIDAD = RCREG - 48;
 [e = _UNIDAD -> - -> _RCREG `i -> 48 `i `uc ]
-"145
-[; ;SPI_MAESTRO.c: 145:     sprintf(v1, "%d", CENTENA);
-[e ( _sprintf (1 , (. , &U _v1 :s 3C -> _CENTENA `i ]
-"146
-[; ;SPI_MAESTRO.c: 146:     sprintf(v2, "%d", DECENA);
-[e ( _sprintf (1 , (. , &U _v2 :s 4C -> _DECENA `i ]
-"147
-[; ;SPI_MAESTRO.c: 147:     sprintf(v3, "%d", UNIDAD);
-[e ( _sprintf (1 , (. , &U _v3 :s 5C -> _UNIDAD `i ]
-"148
-[; ;SPI_MAESTRO.c: 148:     strcat(v1, v2);
+"164
+[; ;SPI_MAESTRO.c: 164:     if(CENTENA == 2 && DECENA == 5)
+[e $ ! && == -> _CENTENA `i -> 2 `i == -> _DECENA `i -> 5 `i 175  ]
+"165
+[; ;SPI_MAESTRO.c: 165:     {
+{
+"166
+[; ;SPI_MAESTRO.c: 166:           while(RCREG > '5')
+[e $U 176  ]
+[e :U 177 ]
+"167
+[; ;SPI_MAESTRO.c: 167:           {
+{
+"168
+[; ;SPI_MAESTRO.c: 168:               def2();
+[e ( _def2 ..  ]
+"169
+[; ;SPI_MAESTRO.c: 169:           }
+}
+[e :U 176 ]
+"166
+[; ;SPI_MAESTRO.c: 166:           while(RCREG > '5')
+[e $ > -> _RCREG `ui -> 53 `ui 177  ]
+[e :U 178 ]
+"170
+[; ;SPI_MAESTRO.c: 170:     }
+}
+[e :U 175 ]
+"171
+[; ;SPI_MAESTRO.c: 171:     sprintf(v1, "%d", CENTENA);
+[e ( _sprintf (1 , (. , &U _v1 :s 6C -> _CENTENA `i ]
+"172
+[; ;SPI_MAESTRO.c: 172:     sprintf(v2, "%d", DECENA);
+[e ( _sprintf (1 , (. , &U _v2 :s 7C -> _DECENA `i ]
+"173
+[; ;SPI_MAESTRO.c: 173:     sprintf(v3, "%d", UNIDAD);
+[e ( _sprintf (1 , (. , &U _v3 :s 8C -> _UNIDAD `i ]
+"174
+[; ;SPI_MAESTRO.c: 174:     strcat(v1, v2);
 [e ( _strcat (2 , &U _v1 -> &U _v2 `*Cuc ]
-"149
-[; ;SPI_MAESTRO.c: 149:     strcat(v1, v3);
+"175
+[; ;SPI_MAESTRO.c: 175:     strcat(v1, v3);
 [e ( _strcat (2 , &U _v1 -> &U _v3 `*Cuc ]
-"150
-[; ;SPI_MAESTRO.c: 150:     int com = atoi(v1);
+"176
+[; ;SPI_MAESTRO.c: 176:     int com = atoi(v1);
 [v _com `i ~T0 @X0 1 a ]
 [e = _com ( _atoi (1 -> &U _v1 `*Cuc ]
-"151
-[; ;SPI_MAESTRO.c: 151:     PORTB = com;
+"177
+[; ;SPI_MAESTRO.c: 177:     PORTB = com;
 [e = _PORTB -> _com `uc ]
-"152
-[; ;SPI_MAESTRO.c: 152:     }
+"178
+[; ;SPI_MAESTRO.c: 178:     }
 }
 [e :U 144 ]
 [e $U 145  ]
 [e :U 146 ]
-"153
-[; ;SPI_MAESTRO.c: 153:     return;
+"179
+[; ;SPI_MAESTRO.c: 179:     return;
 [e $UE 143  ]
-"154
-[; ;SPI_MAESTRO.c: 154: }
+"180
+[; ;SPI_MAESTRO.c: 180: }
 [e :UE 143 ]
 }
-"158
-[; ;SPI_MAESTRO.c: 158: void setup(void){
+"184
+[; ;SPI_MAESTRO.c: 184: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"159
-[; ;SPI_MAESTRO.c: 159:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
-"160
-[; ;SPI_MAESTRO.c: 160:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
-"161
-[; ;SPI_MAESTRO.c: 161:     TRISC2 = 0;
-[e = _TRISC2 -> -> 0 `i `b ]
-"162
-[; ;SPI_MAESTRO.c: 162:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"163
-[; ;SPI_MAESTRO.c: 163:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"164
-[; ;SPI_MAESTRO.c: 164:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"165
-[; ;SPI_MAESTRO.c: 165:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
-"168
-[; ;SPI_MAESTRO.c: 168:     OSCCONbits.IRCF2 = 1;
-[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"169
-[; ;SPI_MAESTRO.c: 169:     OSCCONbits.IRCF1 = 1;
-[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"170
-[; ;SPI_MAESTRO.c: 170:     OSCCONbits.IRCF0 = 0;
-[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
-"171
-[; ;SPI_MAESTRO.c: 171:     OSCCONbits.SCS = 1;
-[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"174
-[; ;SPI_MAESTRO.c: 174:     TXSTAbits.BRGH = 1;
-[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"175
-[; ;SPI_MAESTRO.c: 175:     BAUDCTLbits.BRG16 = 0;
-[e = . . _BAUDCTLbits 0 3 -> -> 0 `i `uc ]
-"177
-[; ;SPI_MAESTRO.c: 177:     TXSTAbits.SYNC = 0;
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"178
-[; ;SPI_MAESTRO.c: 178:     RCSTAbits.SPEN = 1;
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"179
-[; ;SPI_MAESTRO.c: 179:     RCSTAbits.CREN = 1;
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"181
-[; ;SPI_MAESTRO.c: 181:     TXSTAbits.TXEN = 1;
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"183
-[; ;SPI_MAESTRO.c: 183:     RCSTAbits.RX9 = 0;
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
 "185
-[; ;SPI_MAESTRO.c: 185:     SPBRG = 25;
-[e = _SPBRG -> -> 25 `i `uc ]
+[; ;SPI_MAESTRO.c: 185:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
 "186
-[; ;SPI_MAESTRO.c: 186:     SPBRGH = 1;
-[e = _SPBRGH -> -> 1 `i `uc ]
+[; ;SPI_MAESTRO.c: 186:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"187
+[; ;SPI_MAESTRO.c: 187:     TRISC2 = 0;
+[e = _TRISC2 -> -> 0 `i `b ]
 "188
-[; ;SPI_MAESTRO.c: 188:     PORTCbits.RC2 = 1;
-[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+[; ;SPI_MAESTRO.c: 188:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
 "189
-[; ;SPI_MAESTRO.c: 189:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-[e ( _spiInit (4 , , , . `E1292 0 . `E1300 0 . `E1304 1 . `E1308 0 ]
+[; ;SPI_MAESTRO.c: 189:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
+"190
+[; ;SPI_MAESTRO.c: 190:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "191
-[; ;SPI_MAESTRO.c: 191: }
-[e :UE 168 ]
+[; ;SPI_MAESTRO.c: 191:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"194
+[; ;SPI_MAESTRO.c: 194:     OSCCONbits.IRCF2 = 1;
+[e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
+"195
+[; ;SPI_MAESTRO.c: 195:     OSCCONbits.IRCF1 = 1;
+[e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
+"196
+[; ;SPI_MAESTRO.c: 196:     OSCCONbits.IRCF0 = 0;
+[e = . . _OSCCONbits 1 1 -> -> 0 `i `uc ]
+"197
+[; ;SPI_MAESTRO.c: 197:     OSCCONbits.SCS = 1;
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+"200
+[; ;SPI_MAESTRO.c: 200:     TXSTAbits.BRGH = 1;
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+"201
+[; ;SPI_MAESTRO.c: 201:     BAUDCTLbits.BRG16 = 0;
+[e = . . _BAUDCTLbits 0 3 -> -> 0 `i `uc ]
+"203
+[; ;SPI_MAESTRO.c: 203:     TXSTAbits.SYNC = 0;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"204
+[; ;SPI_MAESTRO.c: 204:     RCSTAbits.SPEN = 1;
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"205
+[; ;SPI_MAESTRO.c: 205:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"207
+[; ;SPI_MAESTRO.c: 207:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"209
+[; ;SPI_MAESTRO.c: 209:     RCSTAbits.RX9 = 0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+"211
+[; ;SPI_MAESTRO.c: 211:     SPBRG = 25;
+[e = _SPBRG -> -> 25 `i `uc ]
+"212
+[; ;SPI_MAESTRO.c: 212:     SPBRGH = 1;
+[e = _SPBRGH -> -> 1 `i `uc ]
+"214
+[; ;SPI_MAESTRO.c: 214:     PORTCbits.RC2 = 1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"215
+[; ;SPI_MAESTRO.c: 215:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+[e ( _spiInit (4 , , , . `E1292 0 . `E1300 0 . `E1304 1 . `E1308 0 ]
+"217
+[; ;SPI_MAESTRO.c: 217: }
+[e :UE 179 ]
 }
-"192
-[; ;SPI_MAESTRO.c: 192: void division(uint8_t variable){
+"218
+[; ;SPI_MAESTRO.c: 218: void division(uint8_t variable){
 [v _division `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _division ]
 [v _variable `uc ~T0 @X0 1 r1 ]
 [f ]
-"193
-[; ;SPI_MAESTRO.c: 193:     uint8_t val;
+"219
+[; ;SPI_MAESTRO.c: 219:     uint8_t val;
 [v _val `uc ~T0 @X0 1 a ]
-"194
-[; ;SPI_MAESTRO.c: 194:     val = variable;
+"220
+[; ;SPI_MAESTRO.c: 220:     val = (variable);
 [e = _val _variable ]
-"195
-[; ;SPI_MAESTRO.c: 195:     centenas = ((val * 1.963)/100) ;
-[e = _centenas -> / * -> -> _val `i `d .1.963 -> -> 100 `i `d `uc ]
-"196
-[; ;SPI_MAESTRO.c: 196:     val = (val - (centenas*100));
+"221
+[; ;SPI_MAESTRO.c: 221:     centenas = (val/100);
+[e = _centenas -> / -> _val `i -> 100 `i `uc ]
+"222
+[; ;SPI_MAESTRO.c: 222:     val = (val - (centenas*100));
 [e = _val -> - -> _val `i * -> _centenas `i -> 100 `i `uc ]
-"197
-[; ;SPI_MAESTRO.c: 197:     decenas = (val/10);
+"223
+[; ;SPI_MAESTRO.c: 223:     decenas = (val/10);
 [e = _decenas -> / -> _val `i -> 10 `i `uc ]
-"198
-[; ;SPI_MAESTRO.c: 198:     val = (val - (decenas*10));
+"224
+[; ;SPI_MAESTRO.c: 224:     val = (val - (decenas*10));
 [e = _val -> - -> _val `i * -> _decenas `i -> 10 `i `uc ]
-"199
-[; ;SPI_MAESTRO.c: 199:     unidades = (val);
+"225
+[; ;SPI_MAESTRO.c: 225:     unidades = (val);
 [e = _unidades -> _val `uc ]
-"201
-[; ;SPI_MAESTRO.c: 201:     centenas = centenas + 48;
+"227
+[; ;SPI_MAESTRO.c: 227:     centenas = centenas + 48;
 [e = _centenas -> + -> _centenas `i -> 48 `i `uc ]
-"202
-[; ;SPI_MAESTRO.c: 202:     decenas = decenas + 48;
+"228
+[; ;SPI_MAESTRO.c: 228:     decenas = decenas + 48;
 [e = _decenas -> + -> _decenas `i -> 48 `i `uc ]
-"203
-[; ;SPI_MAESTRO.c: 203:     unidades = unidades + 48;
+"229
+[; ;SPI_MAESTRO.c: 229:     unidades = unidades + 48;
 [e = _unidades -> + -> _unidades `i -> 48 `i `uc ]
-"204
-[; ;SPI_MAESTRO.c: 204: }
-[e :UE 169 ]
+"230
+[; ;SPI_MAESTRO.c: 230: }
+[e :UE 180 ]
 }
-"205
-[; ;SPI_MAESTRO.c: 205: void putch(char info){
+"231
+[; ;SPI_MAESTRO.c: 231: void putch(char info){
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _info `uc ~T0 @X0 1 r1 ]
 [f ]
-"207
-[; ;SPI_MAESTRO.c: 207:     while (TXIF == 0);
-[e $U 171  ]
-[e :U 172 ]
-[e :U 171 ]
-[e $ == -> _TXIF `i -> 0 `i 172  ]
-[e :U 173 ]
-"208
-[; ;SPI_MAESTRO.c: 208:     TXREG = info;
+"233
+[; ;SPI_MAESTRO.c: 233:     while (TXIF == 0);
+[e $U 182  ]
+[e :U 183 ]
+[e :U 182 ]
+[e $ == -> _TXIF `i -> 0 `i 183  ]
+[e :U 184 ]
+"234
+[; ;SPI_MAESTRO.c: 234:     TXREG = info;
 [e = _TXREG -> _info `uc ]
-"210
-[; ;SPI_MAESTRO.c: 210: }
-[e :UE 170 ]
+"236
+[; ;SPI_MAESTRO.c: 236: }
+[e :UE 181 ]
+}
+"237
+[; ;SPI_MAESTRO.c: 237: void def(void){
+[v _def `(v ~T0 @X0 1 ef ]
+{
+[e :U _def ]
+[f ]
+"238
+[; ;SPI_MAESTRO.c: 238:     if(RCREG > 2){
+[e $ ! > -> _RCREG `i -> 2 `i 186  ]
+{
+"239
+[; ;SPI_MAESTRO.c: 239:            printf("Introduzca un valor valido de 0 a 2\r");
+[e ( _printf :s 9C ]
+"240
+[; ;SPI_MAESTRO.c: 240:        }
+}
+[e :U 186 ]
+"241
+[; ;SPI_MAESTRO.c: 241:        while(RCIF == 0);
+[e $U 187  ]
+[e :U 188 ]
+[e :U 187 ]
+[e $ == -> _RCIF `i -> 0 `i 188  ]
+[e :U 189 ]
+"242
+[; ;SPI_MAESTRO.c: 242:        CENTENA = RCREG -48;
+[e = _CENTENA -> - -> _RCREG `i -> 48 `i `uc ]
+"243
+[; ;SPI_MAESTRO.c: 243: }
+[e :UE 185 ]
+}
+"245
+[; ;SPI_MAESTRO.c: 245: void def1(void){
+[v _def1 `(v ~T0 @X0 1 ef ]
+{
+[e :U _def1 ]
+[f ]
+"246
+[; ;SPI_MAESTRO.c: 246:     if(RCREG > 5){
+[e $ ! > -> _RCREG `i -> 5 `i 191  ]
+{
+"247
+[; ;SPI_MAESTRO.c: 247:            printf("Introduzca un valor menor o igual a 5\r");
+[e ( _printf :s 10C ]
+"248
+[; ;SPI_MAESTRO.c: 248:        }
+}
+[e :U 191 ]
+"249
+[; ;SPI_MAESTRO.c: 249:        while(RCIF == 0);
+[e $U 192  ]
+[e :U 193 ]
+[e :U 192 ]
+[e $ == -> _RCIF `i -> 0 `i 193  ]
+[e :U 194 ]
+"250
+[; ;SPI_MAESTRO.c: 250:        DECENA = RCREG -48;
+[e = _DECENA -> - -> _RCREG `i -> 48 `i `uc ]
+"251
+[; ;SPI_MAESTRO.c: 251: }
+[e :UE 190 ]
+}
+"253
+[; ;SPI_MAESTRO.c: 253: void def2(void)
+[v _def2 `(v ~T0 @X0 1 ef ]
+"254
+[; ;SPI_MAESTRO.c: 254: {
+{
+[e :U _def2 ]
+[f ]
+"255
+[; ;SPI_MAESTRO.c: 255:     if(RCREG > 5)
+[e $ ! > -> _RCREG `i -> 5 `i 196  ]
+"256
+[; ;SPI_MAESTRO.c: 256:        {
+{
+"257
+[; ;SPI_MAESTRO.c: 257:            printf("Introduzca un valor menor o igual a 5\r");
+[e ( _printf :s 11C ]
+"258
+[; ;SPI_MAESTRO.c: 258:        }
+}
+[e :U 196 ]
+"259
+[; ;SPI_MAESTRO.c: 259:        while(RCIF == 0);
+[e $U 197  ]
+[e :U 198 ]
+[e :U 197 ]
+[e $ == -> _RCIF `i -> 0 `i 198  ]
+[e :U 199 ]
+"260
+[; ;SPI_MAESTRO.c: 260:        UNIDAD = RCREG -48;
+[e = _UNIDAD -> - -> _RCREG `i -> 48 `i `uc ]
+"261
+[; ;SPI_MAESTRO.c: 261: }
+[e :UE 195 ]
 }
 [p f _printf 8388608 ]
 [p f _sprintf 8388736 ]
-[a 3C 37 100 0 ]
-[a 4C 37 100 0 ]
-[a 5C 37 100 0 ]
+[a 6C 37 100 0 ]
+[a 7C 37 100 0 ]
+[a 8C 37 100 0 ]
+[a 5C 80 111 114 32 102 97 118 111 114 32 105 110 103 114 101 115 101 32 108 97 32 117 110 105 100 97 100 13 0 ]
+[a 4C 80 111 114 32 102 97 118 111 114 32 105 110 103 114 101 115 101 32 108 97 32 100 101 99 101 110 97 13 0 ]
+[a 10C 73 110 116 114 111 100 117 122 99 97 32 117 110 32 118 97 108 111 114 32 109 101 110 111 114 32 111 32 105 103 117 97 108 32 97 32 53 13 0 ]
+[a 11C 73 110 116 114 111 100 117 122 99 97 32 117 110 32 118 97 108 111 114 32 109 101 110 111 114 32 111 32 105 103 117 97 108 32 97 32 53 13 0 ]
+[a 9C 73 110 116 114 111 100 117 122 99 97 32 117 110 32 118 97 108 111 114 32 118 97 108 105 100 111 32 100 101 32 48 32 97 32 50 13 0 ]
+[a 3C 80 111 114 32 102 97 118 111 114 32 105 110 103 114 101 115 101 32 108 97 32 99 101 110 116 101 110 97 44 32 115 105 32 101 115 32 60 49 48 48 32 99 111 108 111 99 97 114 32 48 13 0 ]
 [a 2C 86 65 76 79 82 32 68 69 32 80 79 84 50 58 32 13 0 ]
 [a 1C 86 65 76 79 82 32 68 69 32 80 79 84 49 58 32 13 0 ]

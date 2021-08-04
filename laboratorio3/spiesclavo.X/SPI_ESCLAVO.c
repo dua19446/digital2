@@ -52,10 +52,10 @@ void setup(void);
 //*****************************************************************************
 void __interrupt() isr(void){
    if(SSPIF == 1){
-        var1 = spiRead();
-        spiWrite(GUARDADO);
-        var2 = spiRead();
-        spiWrite(GUARDADO2);
+        var1 = spiRead();//se guarda en una variable lo que viene del maestro
+        spiWrite(GUARDADO);//Se envia el valor del potenciometro 2 al maestro
+        var2 = spiRead();//se guarda en una variable lo que viene del maestro
+        spiWrite(GUARDADO2);//Se envia el valor del potenciometro 1 al maestro
         SSPIF = 0;
     }
    if (PIR1bits.ADIF == 1)//Interrupcion del ADC 
@@ -125,6 +125,6 @@ void setup(void){
     PIE1bits.SSPIE = 1;         // Habilitamos interrupción MSSP
     TRISAbits.TRISA5 = 1;       // Slave Select
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, 
-            SPI_IDLE_2_ACTIVE);
+            SPI_IDLE_2_ACTIVE);// Se pone un SPI esclavo
    
 }

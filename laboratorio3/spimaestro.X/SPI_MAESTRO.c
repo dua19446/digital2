@@ -1,10 +1,7 @@
 //*****************************************************************************
 /*
  * File:   main.c
- * Author: Pablo
- * Ejemplo de implementación de la comunicación SPI 
- * Código Maestro
- * Created on 10 de febrero de 2020, 03:32 PM
+ * Author: ALEJANDRO DUARTE
  */
 //*****************************************************************************
 //*****************************************************************************
@@ -61,6 +58,9 @@ char v3[20];
 //*****************************************************************************
 void setup(void);
 void division(uint8_t variable);
+void def(void);
+void def1(void);
+void def2(void);
 
 //*****************************************************************************
 // Código Principal
@@ -74,11 +74,11 @@ void main(void) {
        PORTCbits.RC2 = 0;       //Slave Select
        __delay_ms(1);
      
-       spiWrite(0X0A);
-       VOLTAJE1 = spiRead();
+       spiWrite(0X0A); //se escribe al esclavo
+       VOLTAJE1 = spiRead();//Se lee lo que viene del esclavo
        __delay_ms(1);
-       spiWrite(0X0A);
-       VOLTAJE2 = spiRead();
+       spiWrite(0X0A);//se escribe al esclavo
+       VOLTAJE2 = spiRead();//Se lee lo que viene del esclavo
        __delay_ms(1);
        PORTCbits.RC2 = 1;       //Slave Deselect 
       
@@ -103,6 +103,7 @@ void main(void) {
         TXREG = unidades; 
        }
     __delay_ms(50);
+    
     if(TXIF == 1){// EN ENVIA UN SALTO 
         TXREG = 13; 
        }
@@ -136,19 +137,41 @@ void main(void) {
     __delay_ms(50);
     }     
        
+    printf("Por favor ingrese la centena, si es <100 colocar 0\r");
     while (RCIF == 0);
     CENTENA = RCREG - 48;
+    while(RCREG > '2')
+    {
+        def();//para introducir numeros validos
+    }
+    printf("Por favor ingrese la decena\r");
     while (RCIF == 0);
-    DECENA = RCREG - 48;        
+    DECENA = RCREG - 48;  
+    if(CENTENA == 2)
+    {
+           while(RCREG > '5')
+           {
+               def1();//para introducir numeros validos
+           }
+    }
+    printf("Por favor ingrese la unidad\r");
     while (RCIF == 0);
     UNIDAD = RCREG - 48; 
+    
+    if(CENTENA == 2 && DECENA == 5)
+    {
+          while(RCREG > '5')
+          {
+              def2();//para introducir numeros validos
+          }
+    }
     sprintf(v1, "%d", CENTENA);
     sprintf(v2, "%d", DECENA);
     sprintf(v3, "%d", UNIDAD);
     strcat(v1, v2);
     strcat(v1, v3);
-    int com = atoi(v1);
-    PORTB = com;
+    int com = atoi(v1);// Se convierten los datos a numeros decimales 
+    PORTB = com;//Se pone dicho numero en el puerto B
     }
     return;
 }
@@ -187,12 +210,12 @@ void setup(void){
     
     PORTCbits.RC2 = 1;
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-
+    //Se estable un SPI MAESTRO
 }
 void division(uint8_t variable){
     uint8_t val;
-    val = variable;              //Se guarda en valor la variable que entra
-    centenas = ((val * 1.963)/100) ;       //SE OBTIENE EL VALOR DE CENTRENAS
+    val = (variable);              //Se guarda en valor la variable que entra
+    centenas = (val/100);       //SE OBTIENE EL VALOR DE CENTRENAS
     val = (val - (centenas*100));
     decenas = (val/10);         //SE OBTIENE EL VALOR DE DECENAS
     val = (val - (decenas*10));
@@ -207,4 +230,29 @@ void putch(char info){//Se transmite la cadena de caracteres a esta funcion
     while (TXIF == 0);// Se espera algo que haya que transmitir
     TXREG = info;// lo que hay en data se pasa al registro de transmision para 
                  // para que se depliegue en la terminal virtual.
+}
+void def(void){
+    if(RCREG > 2){
+           printf("Introduzca un valor valido de 0 a 2\r");
+       }
+       while(RCIF == 0);
+       CENTENA = RCREG -48;
+}
+
+void def1(void){
+    if(RCREG > 5){
+           printf("Introduzca un valor menor o igual a 5\r");
+       }
+       while(RCIF == 0);
+       DECENA = RCREG -48;
+}
+
+void def2(void)
+{
+    if(RCREG > 5)
+       {
+           printf("Introduzca un valor menor o igual a 5\r");
+       }
+       while(RCIF == 0);
+       UNIDAD = RCREG -48;
 }

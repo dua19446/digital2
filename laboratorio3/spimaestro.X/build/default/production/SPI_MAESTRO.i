@@ -2924,6 +2924,9 @@ char v3[20];
 
 void setup(void);
 void division(uint8_t variable);
+void def(void);
+void def1(void);
+void def2(void);
 
 
 
@@ -2945,7 +2948,7 @@ void main(void) {
        _delay((unsigned long)((1)*(4000000/4000.0)));
        PORTCbits.RC2 = 1;
 
-    division(VOLTAJE1);
+    division((VOLTAJE1*(500/255)));
        if(TXIF == 1){
     _delay((unsigned long)((50)*(4000000/4000.0)));
      printf("VALOR DE POT1: \r");
@@ -2966,13 +2969,14 @@ void main(void) {
         TXREG = unidades;
        }
     _delay((unsigned long)((50)*(4000000/4000.0)));
+
     if(TXIF == 1){
         TXREG = 13;
        }
     _delay((unsigned long)((50)*(4000000/4000.0)));
     }
 
-    division(VOLTAJE2);
+    division((VOLTAJE2*(500/255)));
     if(TXIF == 1){
     _delay((unsigned long)((50)*(4000000/4000.0)));
      printf("VALOR DE POT2: \r");
@@ -2999,12 +3003,34 @@ void main(void) {
     _delay((unsigned long)((50)*(4000000/4000.0)));
     }
 
+    printf("Por favor ingrese la centena, si es <100 colocar 0\r");
     while (RCIF == 0);
     CENTENA = RCREG - 48;
+    while(RCREG > '2')
+    {
+        def();
+    }
+    printf("Por favor ingrese la decena\r");
     while (RCIF == 0);
     DECENA = RCREG - 48;
+    if(CENTENA == 2)
+    {
+           while(RCREG > '5')
+           {
+               def1();
+           }
+    }
+    printf("Por favor ingrese la unidad\r");
     while (RCIF == 0);
     UNIDAD = RCREG - 48;
+
+    if(CENTENA == 2 && DECENA == 5)
+    {
+          while(RCREG > '5')
+          {
+              def2();
+          }
+    }
     sprintf(v1, "%d", CENTENA);
     sprintf(v2, "%d", DECENA);
     sprintf(v3, "%d", UNIDAD);
@@ -3054,8 +3080,8 @@ void setup(void){
 }
 void division(uint8_t variable){
     uint8_t val;
-    val = variable;
-    centenas = ((val * 1.963)/100) ;
+    val = (variable);
+    centenas = (val/100);
     val = (val - (centenas*100));
     decenas = (val/10);
     val = (val - (decenas*10));
@@ -3070,4 +3096,29 @@ void putch(char info){
     while (TXIF == 0);
     TXREG = info;
 
+}
+void def(void){
+    if(RCREG > 2){
+           printf("Introduzca un valor valido de 0 a 2\r");
+       }
+       while(RCIF == 0);
+       CENTENA = RCREG -48;
+}
+
+void def1(void){
+    if(RCREG > 5){
+           printf("Introduzca un valor menor o igual a 5\r");
+       }
+       while(RCIF == 0);
+       DECENA = RCREG -48;
+}
+
+void def2(void)
+{
+    if(RCREG > 5)
+       {
+           printf("Introduzca un valor menor o igual a 5\r");
+       }
+       while(RCIF == 0);
+       UNIDAD = RCREG -48;
 }
