@@ -28,36 +28,51 @@
 #include <stdint.h>
 #include <pic16f887.h>
 #include "I2C.h"
+#include "LCD.h"
 #include <xc.h>
 //*****************************************************************************
 // Definición de variables
 //*****************************************************************************
 #define _XTAL_FREQ 8000000
- 
+#define RS RD2
+#define EN RD3
+#define D4 RD4
+#define D5 RB5
+#define D6 RD6
+#define D7 RD7
 
-char inv;
+uint16_t temp;
+float data1;
+uint8_t CONT;
+uint8_t POT;
+char unidades;
+char decenas;
+char centenas;
 //*****************************************************************************
 // Definición de funciones para que se puedan colocar después del main de lo 
 // contrario hay que colocarlos todas las funciones antes del main
 //*****************************************************************************
 void setup(void);
-
+void division(uint8_t variable);
 //*****************************************************************************
 // Main
 //*****************************************************************************
 void main(void) {
+    unsigned int a;
     setup();
+    Lcd_Init();
+    Lcd_Clear();
     while(1){
         
         I2C_Master_Start();
         I2C_Master_Write(0x51);
-        PORTB = I2C_Master_Read(0);
+        POT = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(200);
         
         I2C_Master_Start();
         I2C_Master_Write(0x61);
-        PORTD = I2C_Master_Read(0);
+        CONT = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(200);
         
@@ -69,9 +84,41 @@ void main(void) {
 
         I2C_Master_Start();
         I2C_Master_Write(0x81); //para que ahora lea
-        PORTA = I2C_Master_Read(0); //read temperature 
+        temp = (I2C_Master_Read(0))<<8;
+        temp += I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(200);
+        
+        data1 = ((175.72*temp)/65536)-46.85;
+       
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String(" S1:   S2:   S3:");
+        Lcd_Set_Cursor(2,2);
+        division(POT);
+        Lcd_Write_Char(centenas);//SE ENVIA VALOR DEL POTENCIOMETRO 1 AL LCD
+        Lcd_Write_Char(decenas);
+        Lcd_Write_Char(unidades);
+        Lcd_Set_Cursor(2,9);
+        division(CONT);
+        Lcd_Write_Char(decenas);
+        Lcd_Write_Char(unidades);
+             
+        if (data1 < 0)
+        {
+            data1 *= -1;
+            Lcd_Set_Cursor(2,13);
+            Lcd_Write_Char(45);
+        }
+        else if (data1 >= 0)
+        {
+            Lcd_Set_Cursor(2,13);
+            Lcd_Write_Char(' ');
+        }    
+        Lcd_Set_Cursor(2,14);
+        division(data1);
+        Lcd_Write_Char(centenas);//SE ENVIA VALOR DEL POTENCIOMETRO 1 AL LCD
+        Lcd_Write_Char(decenas);
+        Lcd_Write_Char(unidades);  
     }
     return;
 }
@@ -93,4 +140,17 @@ void setup(void){
     OSCCONbits.IRCF0 = 1; //Se configura el oscilador a una frecuencia de 8MHz
     OSCCONbits.SCS = 1;
     I2C_Master_Init(100000);        // Inicializar Comuncación I2C
+}
+void division(uint8_t variable){
+    uint8_t val;
+    val = variable;              //Se guarda en valor la variable que entra
+    centenas = (val/100) ;       //SE OBTIENE EL VALOR DE CENTRENAS
+    val = (val - (centenas*100));
+    decenas = (val/10);         //SE OBTIENE EL VALOR DE DECENAS
+    val = (val - (decenas*10));
+    unidades = (val);         //SE OBTIENE EL VALOR DE UNIDADES
+    
+    centenas = centenas + 48; //Paraa que el valor este en valores ASCII
+    decenas = decenas + 48;
+    unidades = unidades + 48;
 }
