@@ -49,21 +49,23 @@ unsigned char CONT;
 char centenas; //Paraa que el valor este en valores ASCII
 char decenas;
 char unidades;
-uint8_t CENTENA;
-uint8_t DECENA;
-uint8_t UNIDAD;
+char centenas1; //Paraa que el valor este en valores ASCII
+char decenas1;
+char unidades1;
 char v1[20];
 char v2[20];
 char v3[20];
+char puerto;
+
 //------------------------------------------------------------------------------
 //                          PROTOTIPOS FUNCIONES 
 //------------------------------------------------------------------------------
 void setup(void); 
 void putch(char data);
 void division(uint8_t variable);
-void def(void);
-void def1(void);
-void def2(void);
+//void def(void);
+//void def1(void);
+//void def2(void);
 // Se establece la funcion de interrupcion
 void __interrupt() isr(void){
 if (RBIF == 1)// Interrupcion por la bandera del puerto B
@@ -88,9 +90,11 @@ void main(void) {
     while (1) // Se implemta el loop
     {
         division(CONT);
+        
+     if (RCREG == 'a'){   
        if(TXIF == 1){
-    __delay_ms(50);
-     printf("\rVALOR DE CONTADOR DE BOTONES: \r");//SE ENVIA CANDENA DE CARACTERES
+//    __delay_ms(50);
+//     printf("\rVALOR DE CONTADOR DE BOTONES: \r");//SE ENVIA CANDENA DE CARACTERES
      __delay_ms(50);
     if(TXIF == 1){
         TXREG = centenas; 
@@ -104,48 +108,30 @@ void main(void) {
         TXREG = unidades; 
        }
     __delay_ms(50);
-    
-    if(TXIF == 1){// EN ENVIA UN SALTO 
-        TXREG = 13; 
-       }
-    __delay_ms(50);
     }    
+     }
     
-    printf("Por favor ingrese la centena, si es <100 colocar 0\r");
+        
+        
     while (RCIF == 0);
-    CENTENA = RCREG - 48;
-    while(RCREG > '2')
-    {
-        def();//para introducir numeros validos
-    }
-    printf("Por favor ingrese la decena\r");
+    centenas1 = RCREG - 48;
+    RCIF = 0;
     while (RCIF == 0);
-    DECENA = RCREG - 48;  
-    if(CENTENA == 2)
-    {
-           while(RCREG > '5')
-           {
-               def1();//para introducir numeros validos
-           }
-    }
-    printf("Por favor ingrese la unidad\r");
+    decenas1 = RCREG - 48;
+    RCIF = 0;
     while (RCIF == 0);
-    UNIDAD = RCREG - 48; 
+    unidades1 = RCREG - 48;
+    RCIF = 0;
     
-    if(CENTENA == 2 && DECENA == 5)
-    {
-          while(RCREG > '5')
-          {
-              def2();//para introducir numeros validos
-          }
-    }
-    sprintf(v1, "%d", CENTENA);
-    sprintf(v2, "%d", DECENA);
-    sprintf(v3, "%d", UNIDAD);
-    strcat(v1, v2);
-    strcat(v1, v3);
-    int com = atoi(v1);// Se convierten los datos a numeros decimales 
-    PORTD = com;//Se pone dicho numero en el puerto B
+    PORTD = ((centenas1*100)+(decenas1*10)+ unidades1);
+    
+//    sprintf(v1, "%d", centenas1);
+//    sprintf(v2, "%d", decenas1);
+//    sprintf(v3, "%d", unidades1);
+//    strcat(v1, v2);
+//    strcat(v1, v3);
+//    int com = atoi(v1);// Se convierten los datos a numeros decimales 
+//    PORTD = com;//Se pone dicho numero en el puerto B
     }
         
         
@@ -219,29 +205,4 @@ void division(uint8_t variable){
     centenas = centenas + 48; //Paraa que el valor este en valores ASCII
     decenas = decenas + 48;
     unidades = unidades + 48;
-}
-void def(void){
-    if(RCREG > 2){
-           printf("Introduzca un valor valido de 0 a 2\r");
-       }
-       while(RCIF == 0);
-       CENTENA = RCREG -48;
-}
-
-void def1(void){
-    if(RCREG > 5){
-           printf("Introduzca un valor menor o igual a 5\r");
-       }
-       while(RCIF == 0);
-       DECENA = RCREG -48;
-}
-
-void def2(void)
-{
-    if(RCREG > 5)
-       {
-           printf("Introduzca un valor menor o igual a 5\r");
-       }
-       while(RCIF == 0);
-       UNIDAD = RCREG -48;
 }

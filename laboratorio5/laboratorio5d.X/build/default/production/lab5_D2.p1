@@ -31,48 +31,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
 [p mainexit ]
-"61 lab5_D2.c
-[; ;lab5_D2.c: 61:     if(TXIF == 1){
-[v _setup `(v ~T0 @X0 0 ef ]
-"63
+"63 lab5_D2.c
 [; ;lab5_D2.c: 63:        }
+[v _setup `(v ~T0 @X0 0 ef ]
+"65
+[; ;lab5_D2.c: 65:     if(TXIF == 1){
 [v _division `(v ~T0 @X0 0 ef1`uc ]
-"4544 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+"1140 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
+[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"4544
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4544: extern volatile __bit TXIF __attribute__((address(0x64)));
 [v _TXIF `Vb ~T0 @X0 0 e@100 ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
-"195 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdio.h
-[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
 "1133 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1133: extern volatile unsigned char TXREG __attribute__((address(0x019)));
 [v _TXREG `Vuc ~T0 @X0 0 e@25 ]
 "4175
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 4175: extern volatile __bit RCIF __attribute__((address(0x65)));
 [v _RCIF `Vb ~T0 @X0 0 e@101 ]
-"1140
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
-[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
-"64 lab5_D2.c
-[; ;lab5_D2.c: 64:     _delay((unsigned long)((50)*(8000000/4000.0)));
-[v _def `(v ~T0 @X0 0 ef ]
-"65
-[; ;lab5_D2.c: 65: 
-[v _def1 `(v ~T0 @X0 0 ef ]
-"66
-[; ;lab5_D2.c: 66:     if(TXIF == 1){
-[v _def2 `(v ~T0 @X0 0 ef ]
-"194 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"36 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\string.h
-[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\string.h: 36: extern char * strcat(char *, const char *);
-[v _strcat `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
-"67 C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdlib.h
-[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c90\stdlib.h: 67: extern int atoi(const char *);
-[v _atoi `(i ~T0 @X0 0 ef1`*Cuc ]
-"352 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+"352
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "3387
@@ -443,579 +424,374 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;lab5_D2.c: 17: 
 [p x FOSC  =  INTRC_NOCLKOUT ]
 "20
-[; ;lab5_D2.c: 20: void putch(char data);
+[; ;lab5_D2.c: 20: 
 [p x WDTE  =  OFF        ]
 "21
-[; ;lab5_D2.c: 21: void division(uint8_t variable);
+[; ;lab5_D2.c: 21: void setup(void);
 [p x PWRTE  =  OFF       ]
 "22
-[; ;lab5_D2.c: 22: void def(void);
+[; ;lab5_D2.c: 22: void putch(char data);
 [p x MCLRE  =  OFF       ]
 "24
-[; ;lab5_D2.c: 24: void def2(void);
+[; ;lab5_D2.c: 24: 
 [p x CP  =  OFF          ]
 "26
-[; ;lab5_D2.c: 26: void __attribute__((picinterrupt(("")))) isr(void){
+[; ;lab5_D2.c: 26: 
 [p x CPD  =  OFF         ]
 "28
-[; ;lab5_D2.c: 28:     {
+[; ;lab5_D2.c: 28: void __attribute__((picinterrupt(("")))) isr(void){
 [p x BOREN  =  OFF       ]
 "29
-[; ;lab5_D2.c: 29:         if (PORTBbits.RB0 == 0)
+[; ;lab5_D2.c: 29: if (RBIF == 1)
 [p x IESO  =  OFF        ]
 "31
-[; ;lab5_D2.c: 31:             CONT = CONT + 1;
+[; ;lab5_D2.c: 31:         if (PORTBbits.RB0 == 0)
 [p x FCMEN  =  OFF       ]
 "33
-[; ;lab5_D2.c: 33:         if (PORTBbits.RB1 == 0)
+[; ;lab5_D2.c: 33:             CONT = CONT + 1;
 [p x LVP  =  OFF         ]
 "38
-[; ;lab5_D2.c: 38:     }
+[; ;lab5_D2.c: 38:         }
 [p x BOR4V  =  BOR40V    ]
 "40
-[; ;lab5_D2.c: 40: 
+[; ;lab5_D2.c: 40:     }
 [p x WRT  =  OFF         ]
 "48
-[; ;lab5_D2.c: 48:         division(CONT);
+[; ;lab5_D2.c: 48:     while (1)
 [v _CONT `uc ~T0 @X0 1 e ]
 "49
-[; ;lab5_D2.c: 49:        if(TXIF == 1){
+[; ;lab5_D2.c: 49:     {
 [v _centenas `uc ~T0 @X0 1 e ]
 "50
-[; ;lab5_D2.c: 50:     _delay((unsigned long)((50)*(8000000/4000.0)));
+[; ;lab5_D2.c: 50:         division(CONT);
 [v _decenas `uc ~T0 @X0 1 e ]
 "51
-[; ;lab5_D2.c: 51:      printf("\rVALOR DE CONTADOR DE BOTONES: \r");
+[; ;lab5_D2.c: 51: 
 [v _unidades `uc ~T0 @X0 1 e ]
 "52
-[; ;lab5_D2.c: 52:      _delay((unsigned long)((50)*(8000000/4000.0)));
-[v _CENTENA `uc ~T0 @X0 1 e ]
+[; ;lab5_D2.c: 52:      if (RCREG == 'a'){
+[v _centenas1 `uc ~T0 @X0 1 e ]
 "53
-[; ;lab5_D2.c: 53:     if(TXIF == 1){
-[v _DECENA `uc ~T0 @X0 1 e ]
+[; ;lab5_D2.c: 53:        if(TXIF == 1){
+[v _decenas1 `uc ~T0 @X0 1 e ]
 "54
-[; ;lab5_D2.c: 54:         TXREG = centenas;
-[v _UNIDAD `uc ~T0 @X0 1 e ]
+[; ;lab5_D2.c: 54: 
+[v _unidades1 `uc ~T0 @X0 1 e ]
 "55
-[; ;lab5_D2.c: 55:     }
+[; ;lab5_D2.c: 55: 
 [v _v1 `uc ~T0 @X0 -> 20 `i e ]
 "56
-[; ;lab5_D2.c: 56:     _delay((unsigned long)((50)*(8000000/4000.0)));
+[; ;lab5_D2.c: 56:      _delay((unsigned long)((50)*(8000000/4000.0)));
 [v _v2 `uc ~T0 @X0 -> 20 `i e ]
 "57
 [; ;lab5_D2.c: 57:     if(TXIF == 1){
 [v _v3 `uc ~T0 @X0 -> 20 `i e ]
+"58
+[; ;lab5_D2.c: 58:         TXREG = centenas;
+[v _puerto `uc ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"68
-[; ;lab5_D2.c: 68:        }
+"70
+[; ;lab5_D2.c: 70:      }
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"69
-[; ;lab5_D2.c: 69:     _delay((unsigned long)((50)*(8000000/4000.0)));
-[e $ ! == -> _RBIF `i -> 1 `i 144  ]
-"70
-[; ;lab5_D2.c: 70:     }
-{
 "71
 [; ;lab5_D2.c: 71: 
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 145  ]
+[e $ ! == -> _RBIF `i -> 1 `i 144  ]
 "72
-[; ;lab5_D2.c: 72:     printf("Por favor ingrese la centena, si es <100 colocar 0\r");
+[; ;lab5_D2.c: 72: 
 {
 "73
-[; ;lab5_D2.c: 73:     while (RCIF == 0);
-[e = _CONT -> + -> _CONT `i -> 1 `i `uc ]
+[; ;lab5_D2.c: 73: 
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 145  ]
 "74
-[; ;lab5_D2.c: 74:     CENTENA = RCREG - 48;
+[; ;lab5_D2.c: 74:     while (RCIF == 0);
+{
+"75
+[; ;lab5_D2.c: 75:     centenas1 = RCREG - 48;
+[e = _CONT -> + -> _CONT `i -> 1 `i `uc ]
+"76
+[; ;lab5_D2.c: 76:     RCIF = 0;
 }
 [e :U 145 ]
-"75
-[; ;lab5_D2.c: 75:     while(RCREG > '2')
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 146  ]
-"76
-[; ;lab5_D2.c: 76:     {
-{
 "77
-[; ;lab5_D2.c: 77:         def();
-[e = _CONT -> - -> _CONT `i -> 1 `i `uc ]
+[; ;lab5_D2.c: 77:     while (RCIF == 0);
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 146  ]
 "78
-[; ;lab5_D2.c: 78:     }
-}
-[e :U 146 ]
+[; ;lab5_D2.c: 78:     decenas1 = RCREG - 48;
+{
 "79
-[; ;lab5_D2.c: 79:     printf("Por favor ingrese la decena\r");
-[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+[; ;lab5_D2.c: 79:     RCIF = 0;
+[e = _CONT -> - -> _CONT `i -> 1 `i `uc ]
 "80
 [; ;lab5_D2.c: 80:     while (RCIF == 0);
 }
-[e :U 144 ]
+[e :U 146 ]
 "81
-[; ;lab5_D2.c: 81:     DECENA = RCREG - 48;
+[; ;lab5_D2.c: 81:     unidades1 = RCREG - 48;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"82
+[; ;lab5_D2.c: 82:     RCIF = 0;
+}
+[e :U 144 ]
+"83
+[; ;lab5_D2.c: 83: 
 [e :UE 143 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"85
-[; ;lab5_D2.c: 85:            {
+"87
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"86
-[; ;lab5_D2.c: 86:                def1();
-[e ( _setup ..  ]
 "88
-[; ;lab5_D2.c: 88:     }
-[e :U 149 ]
-"89
-[; ;lab5_D2.c: 89:     printf("Por favor ingrese la unidad\r");
-{
+[e ( _setup ..  ]
 "90
-[; ;lab5_D2.c: 90:     while (RCIF == 0);
-[e ( _division (1 _CONT ]
+[e :U 149 ]
 "91
-[; ;lab5_D2.c: 91:     UNIDAD = RCREG - 48;
-[e $ ! == -> _TXIF `i -> 1 `i 151  ]
 {
 "92
-[; ;lab5_D2.c: 92: 
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"93
-[; ;lab5_D2.c: 93:     if(CENTENA == 2 && DECENA == 5)
-[e ( _printf :s 1C ]
+[e ( _division (1 _CONT ]
 "94
-[; ;lab5_D2.c: 94:     {
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[e $ ! == -> _RCREG `ui -> 97 `ui 151  ]
+{
 "95
-[; ;lab5_D2.c: 95:           while(RCREG > '5')
 [e $ ! == -> _TXIF `i -> 1 `i 152  ]
 {
-"96
-[; ;lab5_D2.c: 96:           {
-[e = _TXREG -> _centenas `uc ]
-"97
-[; ;lab5_D2.c: 97:               def2();
-}
-[e :U 152 ]
 "98
-[; ;lab5_D2.c: 98:           }
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "99
-[; ;lab5_D2.c: 99:     }
 [e $ ! == -> _TXIF `i -> 1 `i 153  ]
 {
 "100
-[; ;lab5_D2.c: 100:     sprintf(v1, "%d", CENTENA);
-[e = _TXREG -> _decenas `uc ]
+[e = _TXREG -> _centenas `uc ]
 "101
-[; ;lab5_D2.c: 101:     sprintf(v2, "%d", DECENA);
 }
 [e :U 153 ]
 "102
-[; ;lab5_D2.c: 102:     sprintf(v3, "%d", UNIDAD);
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "103
-[; ;lab5_D2.c: 103:     strcat(v1, v2);
 [e $ ! == -> _TXIF `i -> 1 `i 154  ]
 {
 "104
-[; ;lab5_D2.c: 104:     strcat(v1, v3);
-[e = _TXREG -> _unidades `uc ]
+[e = _TXREG -> _decenas `uc ]
 "105
-[; ;lab5_D2.c: 105:     int com = atoi(v1);
 }
 [e :U 154 ]
 "106
-[; ;lab5_D2.c: 106:     PORTD = com;
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"108
-[; ;lab5_D2.c: 108: 
+"107
 [e $ ! == -> _TXIF `i -> 1 `i 155  ]
 {
+"108
+[e = _TXREG -> _unidades `uc ]
 "109
-[; ;lab5_D2.c: 109: 
-[e = _TXREG -> -> 13 `i `uc ]
-"110
-[; ;lab5_D2.c: 110:     }
 }
 [e :U 155 ]
-"111
-[; ;lab5_D2.c: 111: 
+"110
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"111
+}
+[e :U 152 ]
 "112
-[; ;lab5_D2.c: 112: 
 }
 [e :U 151 ]
-"114
-[; ;lab5_D2.c: 114: 
-[e ( _printf :s 2C ]
-"115
-[; ;lab5_D2.c: 115: void setup(void){
+"116
 [e $U 156  ]
 [e :U 157 ]
 [e :U 156 ]
 [e $ == -> _RCIF `i -> 0 `i 157  ]
 [e :U 158 ]
-"116
-[; ;lab5_D2.c: 116: 
-[e = _CENTENA -> - -> _RCREG `i -> 48 `i `uc ]
 "117
-[; ;lab5_D2.c: 117:     ANSEL = 0X00;
+[e = _centenas1 -> - -> _RCREG `i -> 48 `i `uc ]
+"118
+[e = _RCIF -> -> 0 `i `b ]
+"119
 [e $U 159  ]
 [e :U 160 ]
-"118
-[; ;lab5_D2.c: 118:     ANSELH = 0X00;
-{
-"119
-[; ;lab5_D2.c: 119: 
-[e ( _def ..  ]
-"120
-[; ;lab5_D2.c: 120:     TRISBbits.TRISB0 = 1;
-}
 [e :U 159 ]
-"117
-[; ;lab5_D2.c: 117:     ANSEL = 0X00;
-[e $ > -> _RCREG `ui -> 50 `ui 160  ]
+[e $ == -> _RCIF `i -> 0 `i 160  ]
 [e :U 161 ]
+"120
+[e = _decenas1 -> - -> _RCREG `i -> 48 `i `uc ]
 "121
-[; ;lab5_D2.c: 121:     TRISBbits.TRISB1 = 1;
-[e ( _printf :s 3C ]
+[e = _RCIF -> -> 0 `i `b ]
 "122
-[; ;lab5_D2.c: 122:     TRISD = 0x00;
 [e $U 162  ]
 [e :U 163 ]
 [e :U 162 ]
 [e $ == -> _RCIF `i -> 0 `i 163  ]
 [e :U 164 ]
 "123
-[; ;lab5_D2.c: 123: 
-[e = _DECENA -> - -> _RCREG `i -> 48 `i `uc ]
+[e = _unidades1 -> - -> _RCREG `i -> 48 `i `uc ]
 "124
-[; ;lab5_D2.c: 124:     PORTA = 0X00;
-[e $ ! == -> _CENTENA `i -> 2 `i 165  ]
-"125
-[; ;lab5_D2.c: 125:     PORTD = 0X00;
-{
+[e = _RCIF -> -> 0 `i `b ]
 "126
-[; ;lab5_D2.c: 126: 
-[e $U 166  ]
-[e :U 167 ]
-"127
-[; ;lab5_D2.c: 127: 
-{
-"128
-[; ;lab5_D2.c: 128:     OSCCONbits.IRCF2 = 1;
-[e ( _def1 ..  ]
-"129
-[; ;lab5_D2.c: 129:     OSCCONbits.IRCF1 = 1;
-}
-[e :U 166 ]
-"126
-[; ;lab5_D2.c: 126: 
-[e $ > -> _RCREG `ui -> 53 `ui 167  ]
-[e :U 168 ]
-"130
-[; ;lab5_D2.c: 130:     OSCCONbits.IRCF0 = 1;
-}
-[e :U 165 ]
-"131
-[; ;lab5_D2.c: 131:     OSCCONbits.SCS = 1;
-[e ( _printf :s 4C ]
-"132
-[; ;lab5_D2.c: 132: 
-[e $U 169  ]
-[e :U 170 ]
-[e :U 169 ]
-[e $ == -> _RCIF `i -> 0 `i 170  ]
-[e :U 171 ]
-"133
-[; ;lab5_D2.c: 133: 
-[e = _UNIDAD -> - -> _RCREG `i -> 48 `i `uc ]
+[e = _PORTD -> + + * -> _centenas1 `i -> 100 `i * -> _decenas1 `i -> 10 `i -> _unidades1 `i `uc ]
 "135
-[; ;lab5_D2.c: 135:     WPUB = 0b00000011;
-[e $ ! && == -> _CENTENA `i -> 2 `i == -> _DECENA `i -> 5 `i 172  ]
-"136
-[; ;lab5_D2.c: 136:     IOCBbits.IOCB0 = 1;
-{
-"137
-[; ;lab5_D2.c: 137:     IOCBbits.IOCB1 = 1;
-[e $U 173  ]
-[e :U 174 ]
-"138
-[; ;lab5_D2.c: 138: 
-{
-"139
-[; ;lab5_D2.c: 139: 
-[e ( _def2 ..  ]
-"140
-[; ;lab5_D2.c: 140:     TXSTAbits.BRGH = 1;
-}
-[e :U 173 ]
-"137
-[; ;lab5_D2.c: 137:     IOCBbits.IOCB1 = 1;
-[e $ > -> _RCREG `ui -> 53 `ui 174  ]
-[e :U 175 ]
-"141
-[; ;lab5_D2.c: 141:     BAUDCTLbits.BRG16 = 1;
-}
-[e :U 172 ]
-"142
-[; ;lab5_D2.c: 142: 
-[e ( _sprintf (1 , (. , &U _v1 :s 5C -> _CENTENA `i ]
-"143
-[; ;lab5_D2.c: 143:     TXSTAbits.SYNC = 0;
-[e ( _sprintf (1 , (. , &U _v2 :s 6C -> _DECENA `i ]
-"144
-[; ;lab5_D2.c: 144:     RCSTAbits.SPEN = 1;
-[e ( _sprintf (1 , (. , &U _v3 :s 7C -> _UNIDAD `i ]
-"145
-[; ;lab5_D2.c: 145:     RCSTAbits.CREN = 1;
-[e ( _strcat (2 , &U _v1 -> &U _v2 `*Cuc ]
-"146
-[; ;lab5_D2.c: 146: 
-[e ( _strcat (2 , &U _v1 -> &U _v3 `*Cuc ]
-"147
-[; ;lab5_D2.c: 147:     TXSTAbits.TXEN = 1;
-[v _com `i ~T0 @X0 1 a ]
-[e = _com ( _atoi (1 -> &U _v1 `*Cuc ]
-"148
-[; ;lab5_D2.c: 148: 
-[e = _PORTD -> _com `uc ]
-"149
-[; ;lab5_D2.c: 149:     RCSTAbits.RX9 = 0;
+[; ;lab5_D2.c: 135:     }
 }
 [e :U 148 ]
 [e $U 149  ]
 [e :U 150 ]
-"152
-[; ;lab5_D2.c: 152:     SPBRGH = 0;
+"138
+[; ;lab5_D2.c: 138:     }
 [e :UE 147 ]
 }
-"157
-[; ;lab5_D2.c: 157:     INTCONbits.RBIF = 1;
+"143
+[; ;lab5_D2.c: 143: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"159
-[; ;lab5_D2.c: 159: }
+"145
+[; ;lab5_D2.c: 145:     ANSEL = 0X00;
 [e = _ANSEL -> -> 0 `i `uc ]
-"160
-[; ;lab5_D2.c: 160: 
+"146
+[; ;lab5_D2.c: 146:     ANSELH = 0X00;
 [e = _ANSELH -> -> 0 `i `uc ]
-"162
-[; ;lab5_D2.c: 162: 
+"148
+[; ;lab5_D2.c: 148:     TRISBbits.TRISB0 = 1;
 [e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-"163
-[; ;lab5_D2.c: 163: void putch(char info){
+"149
+[; ;lab5_D2.c: 149:     TRISBbits.TRISB1 = 1;
 [e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
-"164
-[; ;lab5_D2.c: 164: 
+"150
+[; ;lab5_D2.c: 150:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"166
-[; ;lab5_D2.c: 166:     TXREG = info;
+"152
+[; ;lab5_D2.c: 152:     PORTA = 0X00;
 [e = _PORTA -> -> 0 `i `uc ]
-"167
-[; ;lab5_D2.c: 167: }
+"153
+[; ;lab5_D2.c: 153:     PORTD = 0X00;
 [e = _PORTD -> -> 0 `i `uc ]
-"170
-[; ;lab5_D2.c: 170:     val = (variable);
+"156
+[; ;lab5_D2.c: 156:     OSCCONbits.IRCF2 = 1;
 [e = . . _OSCCONbits 1 3 -> -> 1 `i `uc ]
-"171
-[; ;lab5_D2.c: 171:     centenas = (val/100);
+"157
+[; ;lab5_D2.c: 157:     OSCCONbits.IRCF1 = 1;
 [e = . . _OSCCONbits 1 2 -> -> 1 `i `uc ]
-"172
-[; ;lab5_D2.c: 172:     val = (val - (centenas*100));
+"158
+[; ;lab5_D2.c: 158:     OSCCONbits.IRCF0 = 1;
 [e = . . _OSCCONbits 1 1 -> -> 1 `i `uc ]
-"173
-[; ;lab5_D2.c: 173:     decenas = (val/10);
+"159
+[; ;lab5_D2.c: 159:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"176
-[; ;lab5_D2.c: 176: 
+"162
+[; ;lab5_D2.c: 162:     OPTION_REGbits.nRBPU = 0;
 [e = . . _OPTION_REGbits 0 5 -> -> 0 `i `uc ]
-"177
-[; ;lab5_D2.c: 177:     centenas = centenas + 48;
+"163
+[; ;lab5_D2.c: 163:     WPUB = 0b00000011;
 [e = _WPUB -> -> 3 `i `uc ]
-"178
-[; ;lab5_D2.c: 178:     decenas = decenas + 48;
+"164
+[; ;lab5_D2.c: 164:     IOCBbits.IOCB0 = 1;
 [e = . . _IOCBbits 1 0 -> -> 1 `i `uc ]
-"179
-[; ;lab5_D2.c: 179:     unidades = unidades + 48;
+"165
+[; ;lab5_D2.c: 165:     IOCBbits.IOCB1 = 1;
 [e = . . _IOCBbits 1 1 -> -> 1 `i `uc ]
-"182
-[; ;lab5_D2.c: 182:     if(RCREG > 2){
+"168
+[; ;lab5_D2.c: 168:     TXSTAbits.BRGH = 1;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"183
-[; ;lab5_D2.c: 183:            printf("Introduzca un valor valido de 0 a 2\r");
+"169
+[; ;lab5_D2.c: 169:     BAUDCTLbits.BRG16 = 1;
 [e = . . _BAUDCTLbits 0 3 -> -> 1 `i `uc ]
-"185
-[; ;lab5_D2.c: 185:        while(RCIF == 0);
+"171
+[; ;lab5_D2.c: 171:     TXSTAbits.SYNC = 0;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"186
-[; ;lab5_D2.c: 186:        CENTENA = RCREG -48;
+"172
+[; ;lab5_D2.c: 172:     RCSTAbits.SPEN = 1;
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"173
+[; ;lab5_D2.c: 173:     RCSTAbits.CREN = 1;
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"175
+[; ;lab5_D2.c: 175:     TXSTAbits.TXEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+"177
+[; ;lab5_D2.c: 177:     RCSTAbits.RX9 = 0;
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+"179
+[; ;lab5_D2.c: 179:     SPBRG = 207;
+[e = _SPBRG -> -> 207 `i `uc ]
+"180
+[; ;lab5_D2.c: 180:     SPBRGH = 0;
+[e = _SPBRGH -> -> 0 `i `uc ]
+"183
+[; ;lab5_D2.c: 183:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"184
+[; ;lab5_D2.c: 184:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"185
+[; ;lab5_D2.c: 185:     INTCONbits.RBIF = 1;
+[e = . . _INTCONbits 0 0 -> -> 1 `i `uc ]
+"186
+[; ;lab5_D2.c: 186:     INTCONbits.RBIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
 "187
 [; ;lab5_D2.c: 187: }
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"189
-[; ;lab5_D2.c: 189: void def1(void){
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"191
-[; ;lab5_D2.c: 191:            printf("Introduzca un valor menor o igual a 5\r");
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-"193
-[; ;lab5_D2.c: 193:        while(RCIF == 0);
-[e = _SPBRG -> -> 207 `i `uc ]
-"194
-[; ;lab5_D2.c: 194:        DECENA = RCREG -48;
-[e = _SPBRGH -> -> 0 `i `uc ]
-"197
-[; ;lab5_D2.c: 197: void def2(void)
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"198
-[; ;lab5_D2.c: 198: {
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"199
-[; ;lab5_D2.c: 199:     if(RCREG > 5)
-[e = . . _INTCONbits 0 0 -> -> 1 `i `uc ]
-"200
-[; ;lab5_D2.c: 200:        {
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"201
-[; ;lab5_D2.c: 201:            printf("Introduzca un valor menor o igual a 5\r");
-[e :UE 176 ]
+[e :UE 165 ]
 }
-"205
-[; ;lab5_D2.c: 205: }
+"191
+[; ;lab5_D2.c: 191: void putch(char info){
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _info `uc ~T0 @X0 1 r1 ]
 [f ]
-"207
-[e $U 178  ]
-[e :U 179 ]
-[e :U 178 ]
-[e $ == -> _TXIF `i -> 0 `i 179  ]
-[e :U 180 ]
-"208
+"193
+[; ;lab5_D2.c: 193:     while (TXIF == 0);
+[e $U 167  ]
+[e :U 168 ]
+[e :U 167 ]
+[e $ == -> _TXIF `i -> 0 `i 168  ]
+[e :U 169 ]
+"194
+[; ;lab5_D2.c: 194:     TXREG = info;
 [e = _TXREG -> _info `uc ]
-"209
-[e :UE 177 ]
+"195
+[; ;lab5_D2.c: 195: }
+[e :UE 166 ]
 }
-"210
+"196
+[; ;lab5_D2.c: 196: void division(uint8_t variable){
 [v _division `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _division ]
 [v _variable `uc ~T0 @X0 1 r1 ]
 [f ]
-"211
+"197
+[; ;lab5_D2.c: 197:     uint8_t val;
 [v _val `uc ~T0 @X0 1 a ]
-"212
+"198
+[; ;lab5_D2.c: 198:     val = (variable);
 [e = _val _variable ]
-"213
+"199
+[; ;lab5_D2.c: 199:     centenas = (val/100);
 [e = _centenas -> / -> _val `i -> 100 `i `uc ]
-"214
+"200
+[; ;lab5_D2.c: 200:     val = (val - (centenas*100));
 [e = _val -> - -> _val `i * -> _centenas `i -> 100 `i `uc ]
-"215
+"201
+[; ;lab5_D2.c: 201:     decenas = (val/10);
 [e = _decenas -> / -> _val `i -> 10 `i `uc ]
-"216
+"202
+[; ;lab5_D2.c: 202:     val = (val - (decenas*10));
 [e = _val -> - -> _val `i * -> _decenas `i -> 10 `i `uc ]
-"217
+"203
+[; ;lab5_D2.c: 203:     unidades = (val);
 [e = _unidades -> _val `uc ]
-"219
+"205
+[; ;lab5_D2.c: 205:     centenas = centenas + 48;
 [e = _centenas -> + -> _centenas `i -> 48 `i `uc ]
-"220
+"206
+[; ;lab5_D2.c: 206:     decenas = decenas + 48;
 [e = _decenas -> + -> _decenas `i -> 48 `i `uc ]
-"221
+"207
+[; ;lab5_D2.c: 207:     unidades = unidades + 48;
 [e = _unidades -> + -> _unidades `i -> 48 `i `uc ]
-"222
-[e :UE 181 ]
+"208
+[; ;lab5_D2.c: 208: }
+[e :UE 170 ]
 }
-"223
-[v _def `(v ~T0 @X0 1 ef ]
-{
-[e :U _def ]
-[f ]
-"224
-[e $ ! > -> _RCREG `i -> 2 `i 183  ]
-{
-"225
-[e ( _printf :s 8C ]
-"226
-}
-[e :U 183 ]
-"227
-[e $U 184  ]
-[e :U 185 ]
-[e :U 184 ]
-[e $ == -> _RCIF `i -> 0 `i 185  ]
-[e :U 186 ]
-"228
-[e = _CENTENA -> - -> _RCREG `i -> 48 `i `uc ]
-"229
-[e :UE 182 ]
-}
-"231
-[v _def1 `(v ~T0 @X0 1 ef ]
-{
-[e :U _def1 ]
-[f ]
-"232
-[e $ ! > -> _RCREG `i -> 5 `i 188  ]
-{
-"233
-[e ( _printf :s 9C ]
-"234
-}
-[e :U 188 ]
-"235
-[e $U 189  ]
-[e :U 190 ]
-[e :U 189 ]
-[e $ == -> _RCIF `i -> 0 `i 190  ]
-[e :U 191 ]
-"236
-[e = _DECENA -> - -> _RCREG `i -> 48 `i `uc ]
-"237
-[e :UE 187 ]
-}
-"239
-[v _def2 `(v ~T0 @X0 1 ef ]
-"240
-{
-[e :U _def2 ]
-[f ]
-"241
-[e $ ! > -> _RCREG `i -> 5 `i 193  ]
-"242
-{
-"243
-[e ( _printf :s 10C ]
-"244
-}
-[e :U 193 ]
-"245
-[e $U 194  ]
-[e :U 195 ]
-[e :U 194 ]
-[e $ == -> _RCIF `i -> 0 `i 195  ]
-[e :U 196 ]
-"246
-[e = _UNIDAD -> - -> _RCREG `i -> 48 `i `uc ]
-"247
-[e :UE 192 ]
-}
-[p f _sprintf 8388736 ]
-[p f _printf 8388608 ]
-[a 5C 37 100 0 ]
-[a 6C 37 100 0 ]
-[a 7C 37 100 0 ]
-[a 4C 80 111 114 32 102 97 118 111 114 32 105 110 103 114 101 115 101 32 108 97 32 117 110 105 100 97 100 13 0 ]
-[a 3C 80 111 114 32 102 97 118 111 114 32 105 110 103 114 101 115 101 32 108 97 32 100 101 99 101 110 97 13 0 ]
-[a 9C 73 110 116 114 111 100 117 122 99 97 32 117 110 32 118 97 108 111 114 32 109 101 110 111 114 32 111 32 105 103 117 97 108 32 97 32 53 13 0 ]
-[a 10C 73 110 116 114 111 100 117 122 99 97 32 117 110 32 118 97 108 111 114 32 109 101 110 111 114 32 111 32 105 103 117 97 108 32 97 32 53 13 0 ]
-[a 8C 73 110 116 114 111 100 117 122 99 97 32 117 110 32 118 97 108 111 114 32 118 97 108 105 100 111 32 100 101 32 48 32 97 32 50 13 0 ]
-[a 2C 80 111 114 32 102 97 118 111 114 32 105 110 103 114 101 115 101 32 108 97 32 99 101 110 116 101 110 97 44 32 115 105 32 101 115 32 60 49 48 48 32 99 111 108 111 99 97 114 32 48 13 0 ]
-[a 1C 13 86 65 76 79 82 32 68 69 32 67 79 78 84 65 68 79 82 32 68 69 32 66 79 84 79 78 69 83 58 32 13 0 ]

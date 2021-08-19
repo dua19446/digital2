@@ -2887,21 +2887,23 @@ unsigned char CONT;
 char centenas;
 char decenas;
 char unidades;
-uint8_t CENTENA;
-uint8_t DECENA;
-uint8_t UNIDAD;
+char centenas1;
+char decenas1;
+char unidades1;
 char v1[20];
 char v2[20];
 char v3[20];
+char puerto;
+
 
 
 
 void setup(void);
 void putch(char data);
 void division(uint8_t variable);
-void def(void);
-void def1(void);
-void def2(void);
+
+
+
 
 void __attribute__((picinterrupt(("")))) isr(void){
 if (RBIF == 1)
@@ -2926,9 +2928,11 @@ void main(void) {
     while (1)
     {
         division(CONT);
+
+     if (RCREG == 'a'){
        if(TXIF == 1){
-    _delay((unsigned long)((50)*(8000000/4000.0)));
-     printf("\rVALOR DE CONTADOR DE BOTONES: \r");
+
+
      _delay((unsigned long)((50)*(8000000/4000.0)));
     if(TXIF == 1){
         TXREG = centenas;
@@ -2942,48 +2946,23 @@ void main(void) {
         TXREG = unidades;
        }
     _delay((unsigned long)((50)*(8000000/4000.0)));
+    }
+     }
 
-    if(TXIF == 1){
-        TXREG = 13;
-       }
-    _delay((unsigned long)((50)*(8000000/4000.0)));
-    }
 
-    printf("Por favor ingrese la centena, si es <100 colocar 0\r");
-    while (RCIF == 0);
-    CENTENA = RCREG - 48;
-    while(RCREG > '2')
-    {
-        def();
-    }
-    printf("Por favor ingrese la decena\r");
-    while (RCIF == 0);
-    DECENA = RCREG - 48;
-    if(CENTENA == 2)
-    {
-           while(RCREG > '5')
-           {
-               def1();
-           }
-    }
-    printf("Por favor ingrese la unidad\r");
-    while (RCIF == 0);
-    UNIDAD = RCREG - 48;
 
-    if(CENTENA == 2 && DECENA == 5)
-    {
-          while(RCREG > '5')
-          {
-              def2();
-          }
-    }
-    sprintf(v1, "%d", CENTENA);
-    sprintf(v2, "%d", DECENA);
-    sprintf(v3, "%d", UNIDAD);
-    strcat(v1, v2);
-    strcat(v1, v3);
-    int com = atoi(v1);
-    PORTD = com;
+    while (RCIF == 0);
+    centenas1 = RCREG - 48;
+    RCIF = 0;
+    while (RCIF == 0);
+    decenas1 = RCREG - 48;
+    RCIF = 0;
+    while (RCIF == 0);
+    unidades1 = RCREG - 48;
+    RCIF = 0;
+
+    PORTD = ((centenas1*100)+(decenas1*10)+ unidades1);
+# 135 "lab5_D2.c"
     }
 
 
@@ -3057,29 +3036,4 @@ void division(uint8_t variable){
     centenas = centenas + 48;
     decenas = decenas + 48;
     unidades = unidades + 48;
-}
-void def(void){
-    if(RCREG > 2){
-           printf("Introduzca un valor valido de 0 a 2\r");
-       }
-       while(RCIF == 0);
-       CENTENA = RCREG -48;
-}
-
-void def1(void){
-    if(RCREG > 5){
-           printf("Introduzca un valor menor o igual a 5\r");
-       }
-       while(RCIF == 0);
-       DECENA = RCREG -48;
-}
-
-void def2(void)
-{
-    if(RCREG > 5)
-       {
-           printf("Introduzca un valor menor o igual a 5\r");
-       }
-       while(RCIF == 0);
-       UNIDAD = RCREG -48;
 }
