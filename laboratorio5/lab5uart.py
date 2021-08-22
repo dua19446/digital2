@@ -17,7 +17,7 @@ ADAFRUIT_IO_USERNAME = "AlexD10"
 aio = Client(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)
 
 #Se establecen los feeds que se utilizaran
-contador_recibido = aio.feeds('contador-recibido')
+#contador_recibido = aio.feeds('contador-recibido')
 sr1_feed = aio.feeds('sensor-1')
 sr2_feed = aio.feeds('sensor-2')
 
@@ -32,13 +32,14 @@ print('comunicacion exitosa')
     
 comu.write(b'a')
 print('se envio mensaje')
+
+    
 centenas = comu.readline(1).decode('ascii','ignore')
 decenas = comu.readline(1).decode('ascii','ignore')
 unidades = comu.readline(1).decode('ascii','ignore')
 contador_b = int(centenas+decenas+unidades)
 print('se recibieron datos')
-aio.send_data(contador_recibido.key, contador_b)
-
+aio.send_data(sr1_feed.key, contador_b)
 enviando = aio.receive(sr2_feed.key)
 enviar = enviando.value
 centena = enviar[0:1].encode('ascii','ignore')
@@ -49,4 +50,5 @@ time.sleep(0.01)
 comu.write(decena)
 time.sleep(0.01)
 comu.write(unidad)
+
 
