@@ -83,7 +83,7 @@ void setup()
   // list all files in the card with date and size
   root.ls(LS_R | LS_DATE | LS_SIZE);
 
-  if (!SD.begin(chipSelect)) {
+/*  if (!SD.begin(chipSelect)) {
     Serial.println("Card failed, or not present");
     // don't do anything more:
     return;
@@ -92,14 +92,14 @@ void setup()
 
   Serial.print("Apache 1 para la figura de corazon");
   Serial.print("\nApache 2 para la figura de lentes");
-  Serial.print("\nApache 3 para la figura de pokebola");
+  Serial.print("\nApache 3 para la figura de pokebola");*/
 
 }
 
 
 void loop(void) {
 
-  if (Serial.available() > 0) {
+  /*if (Serial.available() > 0) {
     lecturaserial = Serial.read();
     if (lecturaserial == 49) { // tecla 1 INFORMACIÓN DE LA TARJETA
       Corazon();
@@ -119,7 +119,7 @@ void loop(void) {
   Serial.print("\nApache 2 para la figura de lentes");
   Serial.print("\nApache 3 para la figura de pokebola");
     }
-  }
+  }*/
 
 }
 
