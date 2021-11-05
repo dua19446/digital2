@@ -61,9 +61,9 @@ bool O_S2;
 bool S1;
 bool S2; */
 
-/*extern uint8_t fondo[];
+extern uint8_t fondo[];
 extern uint8_t uvg[];
-extern uint8_t rick[];*/
+//extern uint8_t rick[];*/
 
 Sd2Card card;
 SdVolume volume;
@@ -77,17 +77,17 @@ volatile int state = LOW;
 // Initialization
 //***************************************************************************************************************************************
 void setup() {
-  pinMode(P_1, INPUT_PULLUP);
+ /* pinMode(P_1, INPUT_PULLUP);
   pinMode(P_2, INPUT_PULLUP);// Se ponen los botones como pull-up.
   attachInterrupt(digitalPinToInterrupt(P_1), aumento, RISING);
-  attachInterrupt(digitalPinToInterrupt(P_2), decremento, RISING);
+  attachInterrupt(digitalPinToInterrupt(P_2), decremento, RISING);*/
   
   SysCtlClockSet(SYSCTL_SYSDIV_2_5|SYSCTL_USE_PLL|SYSCTL_OSC_MAIN|SYSCTL_XTAL_16MHZ);
   Serial.begin(9600);
   GPIOPadConfigSet(GPIO_PORTB_BASE, 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7, GPIO_STRENGTH_8MA, GPIO_PIN_TYPE_STD_WPU);
   Serial.println("Start");
  //-----------------------------------------------------------------------------------------------------------------------------
-  SPI.setModule(0);
+ /* SPI.setModule(0);
 
   Serial.print("\nInitializing SD card...");
 
@@ -98,13 +98,14 @@ void setup() {
     // don't do anything more:
     return;
   }
-  Serial.println("card initialized.");
+  Serial.println("card initialized.");*/
  //--------------------------------------------------------------------------------------------------------------------- 
   LCD_Init();
   LCD_Clear(0x00);
 
   delay(1000);
-    
+
+  LCD_Bitmap(0, 0, 320, 240, uvg);
   //LCD_Bitmap(unsigned int x, unsigned int y, unsigned int width, unsigned int height, unsigned char bitmap[]);
  // LCD_Bitmap(0, 0, 320, 240, rick);
  // mapeo("kaisen1.txt");
@@ -130,14 +131,14 @@ void loop() {
  //   delay(50);
 //    }
 //  }
-  if (cont == 0){
+/*  if (cont == 0){
     mapeo("NINJA2_2.txt");
     delay(50);
   }
   if (cont == 1){
     mapeo("Kaisen1.txt");
     delay(50);
-  }
+  }*/
 }
 //***************************************************************************************************************************************
 // Función para inicializar LCD
